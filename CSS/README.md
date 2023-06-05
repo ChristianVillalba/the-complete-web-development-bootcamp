@@ -78,6 +78,20 @@ There are four ways to represent color in CSS:
         * The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (not transparent at all)         
         eg :`hsla(0, 100%, 50%, 0.5)`
 
+### Font Properties
+
+* We can change the size of a font by simply using the `font-size` property
+    * `1px` pixel (1/96 of an inch)
+    * `1pt` point (eg:a word document) (1/72 of an inch)
+    * `1em` A reletive size to the parent. Full length of letter **m** (m represents 100% length)
+    * `1rem` A reletive size to the root (of the html file).
+        * This is a more consistent way of changing the sizing. 
+* the font will look heavier by using `font-weight`
+    * You can have **normal** or you can have **bold**
+    * There is different ways to change the font-weight:
+        * Keywords: bold
+        * Relative font weight (to parent): lighter/bolder
+        * numbers: 100 - 900
 
  
 ## What I’ve learned from this project
