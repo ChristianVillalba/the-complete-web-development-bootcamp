@@ -80,20 +80,47 @@ There are four ways to represent color in CSS:
 
 ### Font Properties
 
-* We can change the size of a font by simply using the `font-size` property
+* `font-size` changes the size of a font 
     * `1px` pixel (1/96 of an inch)
     * `1pt` point (eg:a word document) (1/72 of an inch)
     * `1em` A reletive size to the parent. Full length of letter **m** (m represents 100% length)
     * `1rem` A reletive size to the root (of the html file).
         * This is a more consistent way of changing the sizing. 
-* the font will look heavier by using `font-weight`
+* `font-weight` the font will look heavier by using 
     * You can have **normal** or you can have **bold**
     * There is different ways to change the font-weight:
-        * Keywords: bold
-        * Relative font weight (to parent): lighter/bolder
-        * numbers: 100 - 900
+        * Keywords: `bold`
+        * Relative font weight (to parent): `lighter/bolder`
+        * numbers: `100 - 900`
+* `font-family` determines what you want your text to look like
+    * It's common to write a backup generic font type as well
+    * Google Fonts provides free fonts that can be used in an HTML file
+* `text-align` changes the horizontal alignment of text
 
- 
+### The Box Model: Margin, Padding & Border
+
+* Each HTML element is a box in itself and we can change the dimensions of those boxes by changing things such as width and height
+* Box dimensions can be affected by border thickness and padding
+    * The **border** HTML elements can take three values separated by a space
+        * Thickness of the border
+        * Style
+        * Color
+        * eg: `border: 10px solid black`
+        * It can be modified with more specific rules 
+    * The **padding** is the space between the border and the content
+        * Adding more padding will add space between content and border
+        * It will affect the dimenstions of the HTML Element
+        * It can be modified with more specific rules 
+    * The **margin** is a dimenstion outside the border
+        * It separates the border and any other content that's on screen
+* We can provide up to 4 values that will affect the border, padding and margin
+    * 1 value: all the sides
+    * 2 values: top & botton **+** left & right
+    * 3 values: top **+** left & right **+** bottom 
+    * 4 values: top **+** left **+** right **+** bottom
+    * 1 value + auto: top & botton **+** centered
+    * auto: top & botton = 0 **+** centered
+
 ## What I’ve learned from this project
 
 * How to add CSS     
