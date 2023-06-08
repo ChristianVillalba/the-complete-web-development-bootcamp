@@ -56,7 +56,6 @@ Ids should target one single element. Ids must be unique.
 ### Color Properties
 
 There are four ways to represent color in CSS:
-
 * **Named colors**
     * There are more than 140 named colors, which you can use:
     * [Review named colors on MDN (Documentation)](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color)  
@@ -121,11 +120,47 @@ There are four ways to represent color in CSS:
     * 1 value + auto: top & botton **+** centered
     * auto: top & botton = 0 **+** centered
 
+### CSS Dispal Properties
+
+There are three common types of `display` values:
+* `inline` 
+    * Elements take up as little space as possible
+    * They can **not** have manually adjusted width or height
+    * They will default to size of their content
+    * eg set by default: <span>
+* `block` 
+    * Elements take up the width of their container
+    * The can have manually **adjusted heights**
+    * Most elements have this display set as default
+* `inline-block` 
+    * Elements can have set **width and height** 
+    * They can also appear next to each other
+    * They do not take up their entire container width
+
+Display property: `none`
+* It makes any element on the screen basically disappear
+* Useful to hide elements
+    * Eg: button that hides something when clicked
+
+### Float & Clear properties
+
+* The `float`: property can move elements as far left or as far right as possible
+    * Useful to wrap text around an image (Images are displayed as block as default)
+* The `clear`: clears any responsibility to wrap around things that are floating.
+    * Eg: we don't want the footer to be wrapped around anything else
+
+### Float & Clear properties
+
 ## What I’ve learned from this project
 
+* What is CSS
 * How to add CSS     
 * CSS Selectors
-
+* Color Properties
+* Font Properties
+* The Box Model: Margin, Padding, Border & Content
+* CSS Dispal Properties
+* Resposive websites
 
 ## Author
 
