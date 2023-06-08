@@ -149,7 +149,22 @@ Display property: `none`
 * The `clear`: clears any responsibility to wrap around things that are floating.
     * Eg: we don't want the footer to be wrapped around anything else
 
-### Float & Clear properties
+### Responsive Websites
+
+A really important concept in terms of layout: how it should change depending on the size of the screen.        
+There are four main ways of doing this:
+* Media Queries
+* CSS Grid System
+* CSS Flexbox
+* External Frameworks (eg: Bootstrap)
+
+### Media Queries
+A way to create responsive websites
+* Structure: `@media (breakpoint) {feature}`
+    * `@media` acts as selector "Everything afterwards is a Media Query"
+    * `(Breakpoint)` "The code will be activated when..." eg: (min-width:900px) and (max-width:1200px)
+    * `{feature}` "This is the code that will be activated" eg: {div {display: inline-block;}} 
+
 
 ## What I’ve learned from this project
 
@@ -161,6 +176,7 @@ Display property: `none`
 * The Box Model: Margin, Padding, Border & Content
 * CSS Dispal Properties
 * Resposive websites
+* Media Queries
 
 ## Author
 
