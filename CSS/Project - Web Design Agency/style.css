@@ -8,6 +8,7 @@ body {
 }
 .main {
   flex: 1;
+  display: block;
 }
 /* header{
   height: 50px;
@@ -51,14 +52,17 @@ footer {
 
 @media (min-width: 680px) {
   /* .title-image {float: left;} */
-  .logo {  
-    height: 50px;
-    width: 250px;}
+
   h1 {
     margin-top: 55px;
     margin-bottom: 55px;
     text-align: left;
     font-size: 5rem;
   }
-  
+  .logo {  
+    height: 50px;
+    width: 250px;}
+  .card {
+    display: inline-block;
+  }
   }
