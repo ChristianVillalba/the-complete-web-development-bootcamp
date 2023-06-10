@@ -8,7 +8,6 @@ body {
 }
 .main {
   flex: 1;
-  display: block;
 }
 /* header{
   height: 50px;
@@ -24,12 +23,22 @@ span{
   color: rgb(25, 25, 112);
 }
 
-img{
+.tile-image{
   height: 200px;
+  display: flex;
 }
 
-.title-image{
-  height: 200px;
+.card {
+  width: 100%;
+  display: block;
+  margin-bottom: 30px;
+  text-align: justify;
+}
+.card img {
+  margin-bottom: 10px;
+  width: 100%;
+  display: inline;
+  object-fit: cover;
 }
 
 .logo{
@@ -60,9 +69,19 @@ footer {
     font-size: 5rem;
   }
   .logo {  
-    height: 50px;
+    height: 45px;
     width: 250px;}
   .card {
-    display: inline-block;
+    width: 43%;
+    display: inline;   
+  }
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
+  }
+  .tile-image{
+    float: left;
   }
   }
