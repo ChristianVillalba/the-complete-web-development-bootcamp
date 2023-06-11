@@ -149,6 +149,19 @@ Display property: `none`
 * The `clear`: clears any responsibility to wrap around things that are floating.
     * Eg: we don't want the footer to be wrapped around anything else
 
+### Flexbox
+
+The flexbox is a tool that greatly simplifies how to position elements.
+* `display: flex`
+* Using display: `flex` cancealls all the common types of display values: (inline, block, inline-block)
+* Flexbox
+
+Additional properties:
+* gap: to create space between items
+    * eg: `gap: 10px`
+
+
+
 ### Responsive Websites
 
 A really important concept in terms of layout: how it should change depending on the size of the screen.        
