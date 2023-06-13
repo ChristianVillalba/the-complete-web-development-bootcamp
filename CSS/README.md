@@ -153,12 +153,23 @@ Display property: `none`
 
 The flexbox is a tool that greatly simplifies how to position elements.
 * `display: flex`
-* Using display: `flex` cancealls all the common types of display values: (inline, block, inline-block)
-* Flexbox
-
-Additional properties:
-* gap: to create space between items
-    * eg: `gap: 10px`
+    * To use flexbox we have to wrap our components in a container
+    * Set the container to display: flex
+* Using display: `flex` 
+    * Cancealls all the common types of display values: (inline, block, inline-block)
+    * Flexbox will assume extra **control** to **layout** the content 
+        * eg: default displays such as spam (inline), h1(block)... will be flex
+    * We can specify the layout using **additional properties**:
+        * gap: to create space between items
+            * eg: `gap: 10px`
+* `display: inline-flex`
+    * It will occupy as much space as it needs but other things can occupy that same line
+             
+Flex Direction
+* `flex-direction: row` default setting
+    * It sets the main-axis horizontaly - left to right
+* `flex-direction: column`
+    * It sets the main-axis verticaly - top to bottom
 
 
 
