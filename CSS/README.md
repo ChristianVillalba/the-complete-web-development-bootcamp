@@ -53,6 +53,97 @@ Selectors allows to select subsets or even single elements to be styled
 Classes can be applied to multiple elements.       
 Ids should target one single element. Ids must be unique.
 
+### The Cascade: Specifity and Inheritance
+
+Hierarchy when we have conflicting rules:
+1. **Position**
+    * The rule is on a higher or lower position (last rules will overwrite previous ones)
+    ```css
+    li {
+        color: gold;
+        color: red; /*Overwrites gold*/
+    }
+    li {
+        color: green; /*Overwrites the above*/
+    }
+    ```
+2. **Specificity**
+    * The most specific a selector is, the higher the hierarchy
+    ```css
+    /* <li id="first" class="my-class" draggable > */
+    li {color: gold;}  /* Element Selector */
+    .my-class{color: red;}  /*Class Selector */
+    li[draggable]{color: green;}  /* Attribute Selector */
+    #first{color: blue}  /* Id Selector */
+    ```
+3. **Type**
+    * Refeing to how styles are applied to our website
+    * This is its hierarchy:
+        1. External
+        2. Internal
+        3. Inline
+4. **Importance**
+    * `!important` keyword that you can apply to any CSS Rule 
+    * eg: `color: pink !important;`
+
+Inheritance:
+* When **no value** for an **inherited property** has been specified on an element,<br />The element gets the **computed value** of that property on its **parent element**.
+
+### Combining CSS Selectors
+
+Combining CSS Selectors allows targetting very specific elements
+* **Group**
+    * A way to shorten our code
+    * Selectors separated by `, `
+    ```css
+    selector1, selector2, selector3 {
+        color: gold;
+    }
+    ```
+* **Target Child**
+    * To select the **direct child** of another selector
+    * Selectors separated by `>`
+    ```css
+    parentSelector > childSelector {
+        color: red;
+    }
+    ```
+* **Descendant Selector**
+    * Apply to a descendent of the left selector
+    * It can jump many childs elements
+    * Selectorr separated by **space** 
+    ```css
+    ancestorSelector  descendantSelector {
+        color: blue;
+    }
+    ```   
+* **Chaining Selectors**  
+    * Apply when all selectors are True
+    * This is very specific
+    * Selectors **joined together**
+    ```css
+    selector1selector2 {
+        color: green;
+    }
+    htmlElement#myId.myClass1.myClass2{
+        color: orange
+    }
+    ```   
+* **Combining Combiners**
+    * We can combine the previous combinations together
+    * eg: a child selector that chains selectors 
+     ```css
+    parentSelector > selector1selector2 {
+
+    }
+    ```      
+
+
+
+
+
+
+
 ### Color Properties
 
 There are four ways to represent color in CSS:
@@ -79,13 +170,13 @@ There are four ways to represent color in CSS:
 
 ### Font Properties
 
-* `font-size` changes the size of a font 
+* `font-size` changes the **size of a font** 
     * `1px` pixel (1/96 of an inch)
     * `1pt` point (eg:a word document) (1/72 of an inch)
     * `1em` A reletive size to the parent. Full length of letter **m** (m represents 100% length)
     * `1rem` A reletive size to the root (of the html file).
         * This is a more consistent way of changing the sizing. 
-* `font-weight` the font will look heavier by using 
+* `font-weight` the font will look **heavier** by using 
     * You can have **normal** or you can have **bold**
     * There is different ways to change the font-weight:
         * Keywords: `bold`
@@ -94,23 +185,23 @@ There are four ways to represent color in CSS:
 * `font-family` determines what you want your text to look like
     * It's common to write a backup generic font type as well
     * Google Fonts provides free fonts that can be used in an HTML file
-* `text-align` changes the horizontal alignment of text
+* `text-align` changes the **horizontal alignment** of text
 
 ### The Box Model: Margin, Padding & Border
 
 * Each HTML element is a box in itself and we can change the dimensions of those boxes by changing things such as width and height
 * Box dimensions can be affected by border thickness and padding
-    * The **border** HTML elements can take three values separated by a space
+    * **The border** HTML elements can take three values separated by a space
         * Thickness of the border
         * Style
         * Color
         * eg: `border: 10px solid black`
         * It can be modified with more specific rules 
-    * The **padding** is the space between the border and the content
+    * **The padding** is the space between the border and the content
         * Adding more padding will add space between content and border
         * It will affect the dimenstions of the HTML Element
         * It can be modified with more specific rules 
-    * The **margin** is a dimenstion outside the border
+    * **The margin** is a dimenstion outside the border
         * It separates the border and any other content that's on screen
 * We can provide up to 4 values that will affect the border, padding and margin
     * 1 value: all the sides
@@ -120,6 +211,15 @@ There are four ways to represent color in CSS:
     * 1 value + auto: top & botton **+** centered
     * auto: top & botton = 0 **+** centered
 
+
+
+
+
+
+
+
+
+
 ### CSS Dispal Properties
 
 There are three common types of `display` values:
@@ -127,7 +227,7 @@ There are three common types of `display` values:
     * Elements take up as little space as possible
     * They can **not** have manually adjusted width or height
     * They will default to size of their content
-    * eg set by default: <span>
+    * eg set by default: `<span>`
 * `block` 
     * Elements take up the width of their container
     * The can have manually **adjusted heights**
