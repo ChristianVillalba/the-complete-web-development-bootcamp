@@ -256,28 +256,6 @@ Display property: `none`
 * The `clear`: clears any responsibility to wrap around things that are floating.
     * Eg: we don't want the footer to be wrapped around anything else
 
-### Flexbox
-
-The flexbox is a tool that greatly simplifies how to position elements.
-* `display: flex`
-    * To use flexbox we have to wrap our components in a container
-    * Set the container to display: flex
-* Using display: `flex` 
-    * Cancealls all the common types of display values: (inline, block, inline-block)
-    * Flexbox will assume extra **control** to **layout** the content 
-        * eg: default displays such as spam (inline), h1(block)... will be flex
-    * We can specify the layout using **additional properties**:
-        * gap: to create space between items
-            * eg: `gap: 10px`
-* `display: inline-flex`
-    * It will occupy as much space as it needs but other things can occupy that same line
-             
-Flex Direction
-* `flex-direction: row` default setting
-    * It sets the main-axis horizontaly - left to right
-* `flex-direction: column`
-    * It sets the main-axis verticaly - top to bottom
-
 ### Responsive Websites
 
 A really important concept in terms of layout: how it should change depending on the size of the screen.        
@@ -294,6 +272,29 @@ A way to create responsive websites
     * `(Breakpoint)` "The code will be activated when..." eg: (min-width:900px) and (max-width:1200px)
     * `{feature}` "This is the code that will be activated" eg: {div {display: inline-block;}} 
 
+### Flexbox
+
+The flexbox is a tool that greatly simplifies how to position elements.
+* `display: flex`
+    * To use flexbox we have to wrap our components in a container
+    * Set the container to `display: flex`
+* Using display: `flex` 
+    * Cancealls all the common types of display values: (inline, block, inline-block)
+    * Flexbox will assume extra **control** to **layout** the content 
+        * eg: default displays such as spam (inline), h1(block)... will be flex
+    * We can specify the layout using **additional properties**:
+        * gap: to create space between items
+            * eg: `gap: 10px`
+* `display: inline-flex`
+    * It will occupy as much space as it needs but other things can occupy that same line
+        
+* `flex-direction
+    * `row` — elements will be positioned from left to right across the parent element starting from the top left corner (default).
+    * `row-reverse` — elements will be positioned from right to left across the parent element starting from the top right corner.
+    * `column` — elements will be positioned from top to bottom of the parent element starting from the top left corner.
+    * `column-reverse` — elements will be positioned from the bottom to the top of the parent element starting from the bottom left corner.
+
+CONTINUE HERE
 
 ## What I’ve learned from this project
 
