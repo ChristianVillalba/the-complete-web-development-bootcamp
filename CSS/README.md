@@ -134,15 +134,9 @@ Combining CSS Selectors allows targetting very specific elements
     * eg: a child selector that chains selectors 
      ```css
     parentSelector > selector1selector2 {
-
+        color: pink
     }
     ```      
-
-
-
-
-
-
 
 ### Color Properties
 
@@ -211,16 +205,29 @@ There are four ways to represent color in CSS:
     * 1 value + auto: top & botton **+** centered
     * auto: top & botton = 0 **+** centered
 
+### CSS Position
 
+**The position property** allows us to specify the position of an element:
+    * `static` (html default flow)
+    * `relative`, position relative to its **default position** on the page.
+    * `absolute`, position relative to its closest **positioned parent element**.
+        * We need to include `position: relative` to ancestor element 
+        * If there is no positioned ancestor element, <body> will be the reference    
+    It can be pinned to any part of the web page, but the element will still move with the rest of the document when the page is scrolled.
+    * `fixed`, an element can be pinned to any part of the web page.
+    The element will remain in view no matter what.
+    * The position is actually separate from the margin, padding, width & height
+    * The position will calculate the rest of values to maintain the specified position vales
+        * eg: if we specify the right side, it will calculate the 
 
+which in turn is separate from the width and the height
 
+**The z-index** specifies how an element appears on the page when it overlaps other elements
+    * Everthing on the webpage has a default `z-index: 0`
+    * It requieres an `postion: static` or `position: relative`
+    * `position: absolute` will take an element from the regular flow of the webpage. It won't work
 
-
-
-
-
-
-### CSS Dispal Properties
+### CSS Display Properties
 
 There are three common types of `display` values:
 * `inline` 
@@ -270,8 +277,6 @@ Flex Direction
     * It sets the main-axis horizontaly - left to right
 * `flex-direction: column`
     * It sets the main-axis verticaly - top to bottom
-
-
 
 ### Responsive Websites
 
