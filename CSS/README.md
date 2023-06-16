@@ -278,6 +278,10 @@ The flexbox is a tool that greatly simplifies how to position elements.
 * `display: flex`
     * To use flexbox we have to wrap our components in a container
     * Set the container to `display: flex`
+    * This will set the container as flex container
+* **Flexbox Components**: Flex Container & Flex Items   
+    * **Flex container**: is an element on a page that contains flex items.
+    * **Flex items**: all direct child elements of a flex container are .
 * Using display: `flex` 
     * Cancealls all the common types of display values: (inline, block, inline-block)
     * Flexbox will assume extra **control** to **layout** the content 
@@ -287,7 +291,9 @@ The flexbox is a tool that greatly simplifies how to position elements.
             * eg: `gap: 10px`
 * `display: inline-flex`
     * It will occupy as much space as it needs but other things can occupy that same line
-        
+ <br />
+ <br />   
+
 * `flex-direction: ...`
     * Changing flex-direction, will define the **main-axis** as vertical or horizontal
     * `row` (default) — elements will be positioned from left to right across the parent element starting **from the top left corner**
@@ -295,16 +301,48 @@ The flexbox is a tool that greatly simplifies how to position elements.
     * `column` — elements will be positioned from top to bottom of the parent element starting **from the top left corner**
     * `column-reverse` — elements will be positioned from the bottom to the top of the parent element starting **from the bottom left corner**
     * Adding `flex-basis` will modify the elements based on the **main axis**
-       * ```css
-         flex-direction: row;
-         flex-basis: 100px;
-         /* Elements flex along the main axis: horizontal */
-         ```
-      * ```css
-         flex-direction: column;
-         flex-basis: 100px;
-         /* Elements flex along the main axis: vertical */
-         ```
+        * flex-basis needs to target the elements inside the flexbox 
+        * ```css
+            /* In the flexbox */
+            flex-direction: row;
+            /* Targetting (all the child) elements inside the flexbox */
+            .myFlexbox > * {
+                flex-basis: 100px;
+                /* Elements flex along the main axis: horizontal */
+            }
+            ```
+        * ```css
+            /* In the flexbox */
+            flex-direction: column;
+            /* Targetting (all the child) elements inside the flexbox */
+            .myFlexbox > * {
+                flex-basis: 100px;
+                /* Elements flex along the main axis: vertical */
+            }
+            ```
+<br />   
+<br />
+
+* Flexbox: Layout
+    * `order:` index to ooder items. The default index of all items is `0` (html order)
+    * `flex-wrap: ...` flex items will move to the next line instead of shrink to fit its container.
+        * `wrap` — if don’t fit into a row will move down to the next line
+        * `wrap-reverse` — but the order of rows within a flex container is reversed (last child wild be on first row)
+        * `nowrap` (Default value) — prevents items from wrapping.
+    * `justify-content: ...` To position the items **horizontally**
+        * `flex-start` — all items will be positioned in order, starting from the left of the parent container, with no extra space between or before them.
+        * `flex-end` — all items will be positioned in order, with the last item starting on the right side of the parent container, with no extra space between or after them.
+        * `center` — all items will be positioned in order, in the center of the parent container with no extra space before, between, or after them.
+        * `space-around` — items will be positioned with equal space before and after each item, resulting in double the space between elements.
+        * `space-between` — items will be positioned with equal space between them, but no extra space at the start and end.  
+    * `align-items: ...` to space flex items **vertically** 
+        * Tip:set the height of the container first eg: `height: 70vh;` vh= viewport hight
+        * `flex-start` — all elements will be positioned at the top of the parent container.
+        * `flex-end` — all elements will be positioned at the bottom of the parent container.
+        * `center` — the center of all elements will be positioned halfway between the top and bottom of the parent container.
+        * `baseline` — the bottom of the content of all items will be aligned with each other.
+        * `stretch` — if possible, the items will stretch from top to bottom of the container (this is the default value; elements with a specified height will not stretch; elements with a minimum height or no height specified will stretch).
+    
 
 
 
