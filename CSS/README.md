@@ -295,20 +295,16 @@ The flexbox is a tool that greatly simplifies how to position elements.
     * `column` — elements will be positioned from top to bottom of the parent element starting **from the top left corner**
     * `column-reverse` — elements will be positioned from the bottom to the top of the parent element starting **from the bottom left corner**
     * Adding `flex-basis` will modify the elements based on the **main axis**
-        * ```css
-        flex-direction: row;
-        flex-basis: 100px;
-        /* Elements flex along the main axis: horizontal */
-        ```
-        * ```css
-        flex-direction: column;
-        flex-basis: 100px;
-        /* Elements flex along the main axis: vertical */
-        ```   
-
-
-    
-
+       * ```css
+         flex-direction: row;
+         flex-basis: 100px;
+         /* Elements flex along the main axis: horizontal */
+         ```
+      * ```css
+         flex-direction: column;
+         flex-basis: 100px;
+         /* Elements flex along the main axis: vertical */
+         ```
 
 
 
