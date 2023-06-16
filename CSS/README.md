@@ -288,13 +288,29 @@ The flexbox is a tool that greatly simplifies how to position elements.
 * `display: inline-flex`
     * It will occupy as much space as it needs but other things can occupy that same line
         
-* `flex-direction
-    * `row` — elements will be positioned from left to right across the parent element starting from the top left corner (default).
-    * `row-reverse` — elements will be positioned from right to left across the parent element starting from the top right corner.
-    * `column` — elements will be positioned from top to bottom of the parent element starting from the top left corner.
-    * `column-reverse` — elements will be positioned from the bottom to the top of the parent element starting from the bottom left corner.
+* `flex-direction: ...`
+    * Changing flex-direction, will define the **main-axis** as vertical or horizontal
+    * `row` (default) — elements will be positioned from left to right across the parent element starting **from the top left corner**
+    * `row-reverse` — elements will be positioned from right to left across the parent element starting **from the top right corner**
+    * `column` — elements will be positioned from top to bottom of the parent element starting **from the top left corner**
+    * `column-reverse` — elements will be positioned from the bottom to the top of the parent element starting **from the bottom left corner**
+    * Adding `flex-basis` will modify the elements based on the **main axis**
+        * ```css
+        flex-direction: row;
+        flex-basis: 100px;
+        /* Elements flex along the main axis: horizontal */
+        ```
+        * ```css
+        flex-direction: column;
+        flex-basis: 100px;
+        /* Elements flex along the main axis: vertical */
+        ```   
 
-CONTINUE HERE
+
+    
+
+
+
 
 ## What I’ve learned from this project
 
