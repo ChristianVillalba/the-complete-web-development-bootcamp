@@ -274,7 +274,8 @@ A way to create responsive websites
 
 ### Flexbox
 
-The flexbox is a tool that greatly simplifies how to position elements.
+The flexbox is a tool that greatly simplifies how to position elements.      
+[A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 * `display: flex`
     * To use flexbox we have to wrap our components in a container
     * Set the container to `display: flex`
@@ -291,7 +292,6 @@ The flexbox is a tool that greatly simplifies how to position elements.
             * eg: `gap: 10px`
 * `display: inline-flex`
     * It will occupy as much space as it needs but other things can occupy that same line
- <br />
  <br />   
 
 * `flex-direction: ...`
@@ -319,8 +319,7 @@ The flexbox is a tool that greatly simplifies how to position elements.
                 flex-basis: 100px;
                 /* Elements flex along the main axis: vertical */
             }
-            ```
-<br />   
+            ``` 
 <br />
 
 * Flexbox: Layout
@@ -329,19 +328,38 @@ The flexbox is a tool that greatly simplifies how to position elements.
         * `wrap` — if don’t fit into a row will move down to the next line
         * `wrap-reverse` — but the order of rows within a flex container is reversed (last child wild be on first row)
         * `nowrap` (Default value) — prevents items from wrapping.
-    * `justify-content: ...` To position the items **horizontally**
+    * `justify-content: ...` To position the **flex items horizontally**
         * `flex-start` — all items will be positioned in order, starting from the left of the parent container, with no extra space between or before them.
         * `flex-end` — all items will be positioned in order, with the last item starting on the right side of the parent container, with no extra space between or after them.
         * `center` — all items will be positioned in order, in the center of the parent container with no extra space before, between, or after them.
         * `space-around` — items will be positioned with equal space before and after each item, resulting in double the space between elements.
         * `space-between` — items will be positioned with equal space between them, but no extra space at the start and end.  
-    * `align-items: ...` to space flex items **vertically** 
+    * `align-items: ...` to space **flex items vertically** 
         * Tip:set the height of the container first eg: `height: 70vh;` vh= viewport hight
         * `flex-start` — all elements will be positioned at the top of the parent container.
         * `flex-end` — all elements will be positioned at the bottom of the parent container.
         * `center` — the center of all elements will be positioned halfway between the top and bottom of the parent container.
         * `baseline` — the bottom of the content of all items will be aligned with each other.
         * `stretch` — if possible, the items will stretch from top to bottom of the container (this is the default value; elements with a specified height will not stretch; elements with a minimum height or no height specified will stretch).
+    * `align-content` similar to align-items, but it **requieres** `flex-wrap: wrap;`
+        * ```css
+            /* In the flexbox */
+            flex-wrap: wrap;
+            /* Speciefies how the content should align */
+            align-content: center;
+            /* Flex items will distribute in the center when going to second line when there is not more space*/ 
+            ```  
+<br />
+
+* Flexbox: Sizing
+    * In case, we neeed to customize how each of the items inside a Flexbox is sized
+    * **flexbox** uses a priority list to determine each of the flex items size:      
+      (if this is not set...):
+        1. min/max-width 
+        2. flex-basis (modifies items using the main axis as reference)
+        3. Width (if flex-display: column; >> height)
+        4. Content width
+
     
 
 
@@ -354,9 +372,11 @@ The flexbox is a tool that greatly simplifies how to position elements.
 * Color Properties
 * Font Properties
 * The Box Model: Margin, Padding, Border & Content
+* CSS Position Properties
 * CSS Dispal Properties
 * Resposive websites
 * Media Queries
+* Flexbox
 
 ## Author
 
@@ -364,5 +384,7 @@ Christian Villalba
 
 ## Acknowledgments
 * [Dr Angela Yu](https://www.udemy.com/course/the-complete-web-development-bootcamp/)
+* [CSS Tricks](https://css-tricks.com/)
+* [Codecademy - Full-Stack Engineer](https://www.codecademy.com/learn/paths/full-stack-engineer-career-path)
 * [A simple README](https://gist.github.com/DomPizzie/7a5ff55ffa9081f2de27c315f5018afc)
 
