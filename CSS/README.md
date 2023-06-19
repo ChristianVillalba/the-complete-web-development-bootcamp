@@ -341,7 +341,13 @@ The flexbox is a tool that greatly simplifies how to position elements.
         * `center` — the center of all elements will be positioned halfway between the top and bottom of the parent container.
         * `baseline` — the bottom of the content of all items will be aligned with each other.
         * `stretch` — if possible, the items will stretch from top to bottom of the container (this is the default value; elements with a specified height will not stretch; elements with a minimum height or no height specified will stretch).
-    * `align-content` similar to align-items, but it **requieres** `flex-wrap: wrap;`
+    * `align-self: ...` apply to individual items. **flex items vertically**.
+        * This property accepts the same values as **align-items** for the specific item.
+        * Values  `flex-start | flex-end | center | baseline | stretech`
+    * `align-content: ...` to align a flex container’s lines within it when there is extra space in the cross-axis;
+        * It **requieres** `flex-wrap: wrap;` 
+        * *Note: this property has **no effect** when the flexbox has **only a single line**.*
+        * Values  `flex-start | flex-end | center | space-between | space-around | stretech (default)`
         * ```css
             /* In the flexbox */
             flex-wrap: wrap;
@@ -349,16 +355,29 @@ The flexbox is a tool that greatly simplifies how to position elements.
             align-content: center;
             /* Flex items will distribute in the center when going to second line when there is not more space*/ 
             ```  
+    * `flex-flow:...` declare both the  **flex-direction** & **flex-wrap** properties in one line
+        * 2 values: flex-direction and flex-wrap
+        * All values for flex-direction and flex-wrap are accepted.
 <br />
 
 * Flexbox: Sizing
     * In case, we neeed to customize how each of the items inside a Flexbox is sized
     * **flexbox** uses a priority list to determine each of the flex items size:      
-      (if this is not set...):
+      (if this is not set go to next item on the list):
         1. min/max-width 
         2. flex-basis (modifies items using the main axis as reference)
-        3. Width (if flex-display: column; >> height)
+        3. Width (if flex-display: column; >> Height)
         4. Content width
+    * To custumize our size we can use:
+    * `flex-grow` — allows us to specify if items should grow to fill a container and also which items should grow proportionally more or less than others.
+    * `flex-shrink` — specify which elements will shrink and in what proportions
+    * `flex-basis` — specify the width of an item before it stretches or shrinks
+    * `flex: ...` — allows you to declare ` flex-grow`, ` flex-shrink`, and ` flex-basis` all in one line.
+        * Note: *The **flex property** is different from the **flex value** used for the display property*.
+        * 3 values: flex-grow, flex-shrink, and flex-basis
+        * 2 values: (2 int) flex-grow and flex-shrink
+        * 2 values: (1 int 1 units) flex-grow and flex-basis
+
 
     
 
