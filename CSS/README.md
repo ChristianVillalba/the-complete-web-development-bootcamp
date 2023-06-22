@@ -379,10 +379,17 @@ The flexbox is a tool that greatly simplifies how to position elements.
         * 2 values: (1 int 1 units) flex-grow and flex-basis
 
 ### CSS Grid
-CSS grid is most useful for two-dimensional layouts.    
-To turn an HTML element into a grid container:       Element’s `display` property:
-  * `grid` — for a block-level grid.
-  * `inline-grid` — for an inline grid.
+Flexbox helps us align content along a one dimensional line.     
+CSS grid is most useful for **two-dimensional layouts** (**rows & columns** basis).    
+* To turn an HTML element into a **grid container**:       
+    * Element’s `display: ...` property:      
+        * `grid` — for a block-level grid.
+        * `inline-grid` — for an inline grid.
+    * Assing properties to layout (**rows & columns**):
+        * `grid-template-rows: ` + *`value`*
+        * `grid-template-columns: ` + *`value`*
+        * `grid-template: ` + *`rows value`* / *`column value`*
+
 
 
 
