@@ -386,10 +386,20 @@ CSS grid is most useful for **two-dimensional layouts** (**rows & columns** basi
         * `grid` — for a block-level grid.
         * `inline-grid` — for an inline grid.
     * Assing properties to layout (**rows & columns**):
-        * `grid-template-rows: ` + *`value`*
-        * `grid-template-columns: ` + *`value`*
+        * `grid-template-rows: ` + *`value(s)`*
+        * `grid-template-columns: ` + *`value(s)`*
         * `grid-template: ` + *`rows value`* / *`column value`*
+<br />
 
+* Grid: Sizing
+    * How to **size our columns and rows** to conform to our design.
+    * This are the values that we can add to...
+    * `grid-template`/`-rows:`/`-columns:`/`: ` (rows/columns)
+        * `px` we add the value in px, as many values as needed        
+            eg: `grid-template-rows: 50px 50px 100px 100px` 
+        *  `auto` add responsivnes:      
+            (in rows) 100% of the width of the available space    
+            (in columns) 100% of the hight of the content ( difference: o oq od oqd )   
 
 
 
