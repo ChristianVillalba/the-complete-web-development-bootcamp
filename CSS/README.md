@@ -400,6 +400,24 @@ CSS grid is most useful for **two-dimensional layouts** (**rows & columns** basi
         *  `auto` add responsivnes:      
             (in rows) 100% of the width of the available space    
             (in columns) 100% of the hight of the content ( difference: o oq od oqd )   
+        * `fr` define the different areas of your layout with ratios for sizes     
+            eg: `grid-template-columns: 1fr 1fr 4fr 2.5fr`  
+        * `minmax()` (function) defines min and maximum responsive values      
+            eg: `grid-template-rows: 50px 50px minmax(100px, 400px)` (the 3rd column will be 100-400px)
+        * `repeat(times , value)` (funtion). For the chessboard in 05 Display Grid folder:        
+            eg: `grid-template-rows: repeat(8, 1fr)`     
+            eg: `grid-template-columns: repeat(8, 1fr)`
+    * Grid Auto Rows and Grid Auto Columns
+        * Specify the size of grid tracks added implicitly (by default). eg: more rows than defined
+        * They accept the **same values** as their explicit counterparts, `grid-template`/`-rows`/`-columns`
+        * `grid-auto-rows: ` specifies the height of implicitly added grid rows.
+        * `grid-auto-columns: ` specifies the width of implicitly added grid columns
+<br />
+
+* Grid: Placement   
+
+
+
 
 
 
