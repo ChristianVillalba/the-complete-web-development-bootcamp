@@ -392,7 +392,7 @@ CSS grid is most useful for **two-dimensional layouts** (**rows & columns** basi
 <br />
 
 * Grid: Sizing
-    * How to **size our columns and rows** to conform to our design.
+    * How to **size our columns and rows** to conform to our design:
     * This are the values that we can add to...
     * `grid-template`/`-rows:`/`-columns:`/`: ` (rows/columns)
         * `px` we add the value in px, as many values as needed        
@@ -414,12 +414,65 @@ CSS grid is most useful for **two-dimensional layouts** (**rows & columns** basi
         * `grid-auto-columns: ` specifies the width of implicitly added grid columns
 <br />
 
+* Grid Gap
+    * `row-gap` & `column-gap` : put blank space between every row and column in the grid
+    * `gap` : that can set the row and column gap at the same time
+        * First value: distance between rows
+        * Second value:  distance between columns
+        ```css
+        /* row-gap: 20px; */
+        /* column-gap: 5px; */
+        gap: 20px 5px;
+        ```
+ <br />
+
 * Grid: Placement   
-
-
-
-
-
+* How to lay out items in the grid that we've created
+* Content Placement:
+    * Flexbox provides one of the easiest ways to center and positioning an item inside another container.
+    * Convert our cell to flexbox 
+* **Grid-Column & Grid-Row**
+    * A **grid item** can take multiple rows / columns
+        * `grid-row-start` and `grid-row-end` : make single grid items take up multiple rows
+        * `grid-row` as shorthand for `grid-row-start` and `grid-row-end`
+            ```css
+            .item {
+            grid-row-start: 4;
+            grid-row-end: 6;
+            }
+            /* same as */
+            .item {
+            grid-row: 4 / 6;
+            }
+            ```
+        * `grid-column-start`, `grid-column-end` and `grid-column` work identically to the row properties.
+* Span
+    * Join cells
+    * Inside `grid-row` or `grid-column` properties
+    * We can use the keyword `span` to start or end a column or row
+    * It avoids off-by-one errors (miscalculating the ending grid line)
+    ```css
+    .item {
+        grid-column: 4 / span 2;
+        /* item element should begin in column four and take up two columns of space */
+        /* item would occupy columns four and five */
+    }
+    ```
+* Order
+    * Items, by default, are going to start right after the previous div 
+    * We can change this using `order: ` (similar to flexbox, the default value is 0)
+* Grid area
+    * It will set the starting and ending positions for both the rows and columns
+    * We can refactor properties using the property `grid-area: ` + four values separated by slashes
+        1.  grid-row-start
+        2.  grid-column-start
+        3.  grid-row-end
+        4.  grid-column-end
+    * eg: grid-area: 2 / 3 / 4 / span 3;
+* Overlay Elements using CSS Grid:
+    * One of the biggest differences between Grid and Flexbox  
+    * We can add transperencies if neccessary
+    * We can overlap elements by just placing them (`grid-start-row/column`) where other item is already placed.
 
 ## What I’ve learned from this project
 
