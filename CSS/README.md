@@ -430,7 +430,7 @@ CSS grid is most useful for **two-dimensional layouts** (**rows & columns** basi
 * How to lay out items in the grid that we've created
 * Content Placement:
     * Flexbox provides one of the easiest ways to center and positioning an item inside another container.
-    * Convert our cell to flexbox 
+    * Convert our grid cell to flexbox 
 * **Grid-Column & Grid-Row**
     * A **grid item** can take multiple rows / columns
         * `grid-row-start` and `grid-row-end` : make single grid items take up multiple rows
@@ -473,6 +473,30 @@ CSS grid is most useful for **two-dimensional layouts** (**rows & columns** basi
     * One of the biggest differences between Grid and Flexbox  
     * We can add transperencies if neccessary
     * We can overlap elements by just placing them (`grid-start-row/column`) where other item is already placed.
+
+### Trick: center content in a div
+
+```css
+.div-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 
+    margin: 0;
+    padding: 0;
+    */
+}
+```
+.main-container {
+    height: 100vh;
+    width: 100;
+    background-color: #E1ECC8;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 ## What I’ve learned from this project
 
