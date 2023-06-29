@@ -14,6 +14,7 @@ Instructor: Dr. Angela Yu
     * 12 column layout system built on top of Flexbox.
     * Creates responsive websites 
     * Creates Websites that work and look great on mobile as well as desktop   
+* [Documentation Bootstrap (5.3 version)](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
 
 ### How to use Bootstrap:
 * CDN Link
@@ -31,6 +32,8 @@ Otherwise, Bootstrap will override our styles.
     * One of the most powerful features of Bootstrap
     * It is made of 3 components: 
         1. A **div** that has a **class** of **container**
+            * The bootstrap container is responsive
+            * It will have a different size on different sized screens
         2. A **nested** container div of **class row**
         3. A **nested** container div of **class col**     
         ```html
@@ -43,10 +46,25 @@ Otherwise, Bootstrap will override our styles.
         </div>
         ```
     * Multiple columns laid out inside these rows:
-    * Bootstrap will automatically give every column inside the row 
-        * Equal spacing and space them across the entire width of the container
+        * Bootstrap will automatically give every column inside the row       
+        Equal spacing and space them across the entire width of the container
+* Sizing Columns
+    * Each of our Bootstrap's **rows** has **12 columns** 
+    * The column grid system accepts the format:      
+    `col-ScreenSize-NumberOfColumns`
+        * ScreenSize: uses the predefined breakpoints to add responsivness
+        * NumberOfColumns how many of the 12 columns we are going to take in the given screen size.    
+        eg: `<div class="col-sm-12 col-md-6 col-lg-2"> ... </div>`
+    * These parameter are optional
+        * `col` will take 100% width, 12/12 columns in all screen sizes
+            * Applied to all not defined breakpoints as well
+        * `col-4` will take 4/12 columns in all screen sizes
+     
+* Bootstrap Breakpoints
+    * Bootstrap has predefined breakpoints defined based on common screen sizes
+    * If we reduce the screen size to less than the specified breakpoint the divs will go to 100% width
 
-
+### Bootstrap Components
 
 
 
@@ -64,4 +82,5 @@ Christian Villalba
 ## Acknowledgments
 * [Dr Angela Yu](https://www.udemy.com/course/the-complete-web-development-bootcamp/)
 * [Codecademy - Full-Stack Engineer](https://www.codecademy.com/learn/paths/full-stack-engineer-career-path)
+* [Bootstrap Documentation (5.3 version)](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
 * [A simple README](https://gist.github.com/DomPizzie/7a5ff55ffa9081f2de27c315f5018afc)
