@@ -23,13 +23,33 @@ Instructor: Dr. Angela Yu
     * It is fast and will allow us to create really scalable and fast running web sites.
     * Node.js allows us to take Javascript out of the browser and it liberates it...      
         * allowing it to interact directly with the hardware of a computer.     
+<br>
+
+* Native Node Modules
+    * Node, already comes bundled with a whole bunch of built in modules.       
+    * After liberating JavaScript from the browser using Node,      
+        * We can now use Node.js to interact with the computer directly.
+        * eg: use Node.js to get access directly to the local files of the computer.  
+    * All of the native modules and the documentation of how you can use it:    
+        * [Node Documentation](https://nodejs.org/api/)
+* NPM (Node Package Manager) 
+    * We can install External Node Modules
+        * Besides the Native Node module.
+    * NPM is a package manager for external modules
+        * NPM gets bundled with Node.       
+        * It's currently the world's largest collection of packages of code.      
+        * [Check packages available](https://www.npmjs.com/)
+    * These packages on NPM are bits of reusable code that somebody else wrote,      
+        * and using NPM we can incorporate those packages into our own projects.      
+    
 
 
 ## What I’ve learned from this project
 
 * Node
 * Node REPL (Read Evaluation Print Loop)
-* NPM
+* Native Node Modules
+* NPM (Node Package Manager) 
 * Bootstrap Components
 
 
