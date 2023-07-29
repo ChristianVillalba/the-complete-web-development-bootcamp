@@ -4,7 +4,15 @@ Notes and projects based on: Bootstrap module
 [The Complete Web Development Bootcamp](https://www.udemy.com/course/the-complete-web-development-bootcamp/)          
 Instructor: Dr. Angela Yu 
 
-## Description
+## Description: QR Code Generator
+* This project uses **NodeJS packages** to generate **QR codes** from any URL.
+* It uses 2 npm pacakeges:
+    * [Inquirer.js](https://www.npmjs.com/package/inquirer)
+        * Strives to be an easily embeddable and beautiful command line interface for Node.js 
+    * [qr-image](https://www.npmjs.com/package/qr-image)
+        * This is a QR Code generator.
+    * *Note:*  in order to use the import function,      
+    we have to change our package.json to have the type set as module.
 
 ### Dependencies
 * node.js
