@@ -7,6 +7,7 @@ import inquirer from 'inquirer';
 import qr from "qr-image";
 import fs from "fs";
 // var qr = require('qr-image'); // older syntax
+// const fs = require('fs'); // older syntax
 
 inquirer
   .prompt([{
@@ -18,10 +19,17 @@ inquirer
     // Use user feedback for... whatever!!
     const url = answers.URL;
  
-    var qr_svg = qr.image(url);
-    qr_svg.pipe(fs.createWriteStream('qr_img.png'));
-    
-    
+    var qr_png = qr.image(url);
+    qr_png.pipe(fs.createWriteStream('qr_img.png'));
+
+    fs.writeFile('URL.txt', url, err => {
+      if (err) {
+        console.error(err);
+      }
+      // file written successfully
+    });
+
+
   })
   .catch((error) => {
     if (error.isTtyError) {
