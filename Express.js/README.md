@@ -53,9 +53,21 @@ Instructor: Dr. Angela Yu
 * **Localhost**
     * We don't have a server on the Internet so we host our server locally.
 
+### HTTP Request
 
+* **HTTP (Hypertext Transfer Protocol)** is used to structure requests and responses over the internet.
 
-
+* **Request Vocabulary:**
+    * GET
+        * you want to REQUEST a resource from the server
+    * POST
+        * you SEND a resource to the server
+    * PUT 
+        * Update: REPLACE a resource
+    * PATCH
+        * Update: PATCH UP a resource
+    * DELETE
+        * Delete a resource
     
 
 
