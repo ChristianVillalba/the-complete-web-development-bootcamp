@@ -56,6 +56,7 @@ Instructor: Dr. Angela Yu
 ### HTTP Request
 
 * **HTTP (Hypertext Transfer Protocol)** is used to structure requests and responses over the internet.
+    * Http is a language for client computers to communicate with the servers
 
 * **Request Vocabulary:**
     * GET
@@ -68,7 +69,22 @@ Instructor: Dr. Angela Yu
         * Update: PATCH UP a resource
     * DELETE
         * Delete a resource
+
+* **HTTP Response Status codes**
+    * 100 - 199
+        * Informational responses
+    * 200 - 299 
+        * Successful responses
+    * 300 - 399
+        * Redirection messages
+    * 400 - 499
+        * Client Error Responses
+    * 500 - 599 
+        * Server Error Responses
+    * [HTTP response status codes - MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
     
+### Postman 
+
 
 
 ## What I’ve learned from this project
