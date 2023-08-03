@@ -89,6 +89,39 @@ Instructor: Dr. Angela Yu
     * Useful to create backends or API's and test them as soons as possible.
 * [Download Postman](https://www.postman.com/downloads/)
 
+## Express Middleware
+
+* Express is a routing and middleware web framework that has minimal functionality of its own: 
+    * An Express application is essentially a series of middleware function calls.
+* Middleware functions have access to the **request object** (req), **the response object** (res), and the **next middleware function** in the application’s request-response cycle. 
+<br/>
+
+* So when a **request** comes in to the **server**... 
+* ...and before it gets **processed** by all of the **route handlers**, 
+    * such as our get, pos, put, functions that we've planned for how to deal with a particular request, 
+* **the middleware** (something in between) is able to work with these requests before they get processed and reach their final destinations.
+    * Middleware can be used to... 
+        * change aspects of the request or perform various functions on that request before it goes to its final routing.
+        * logging the requests.
+        * authentication
+        * process Errors
+<br/>
+
+* Middleware functions can:
+    * Execute any code.
+    * Make changes to the request and the response objects.
+    * End the request-response cycle.
+    * Call the next middleware function in the stack.
+<br/>
+
+* Middleware: body-parser
+    * `npm install body-parser`
+    * Node.js body parsing middleware. 
+    * Parse incoming request bodies in a middleware before your handlers.
+        * Available under the `req.body` property.
+        * Very commonly this is used to handle form data.
+        * *Parse:* resolve (a sentence) into its component parts and describe their syntactic roles.
+
 
 
 ## What I’ve learned from this project
