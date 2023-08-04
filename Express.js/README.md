@@ -121,7 +121,17 @@ Instructor: Dr. Angela Yu
         * Available under the `req.body` property.
         * Very commonly this is used to handle form data.
         * *Parse:* resolve (a sentence) into its component parts and describe their syntactic roles.
-
+    * Express.js `res.sendFile()` Function
+        * It requires a exact path in order to know which file to send back
+        * In order to get the full path to our index.html:
+            * ```javascript
+                // this will generate all of the path up until the path that we want to access
+                import { dirname } from "path";
+                import { fileURLToPath } from "url";
+                const __dirname = dirname(fileURLToPath(import.meta.url));
+                // ...
+                    res.sendFile(__dirname + "/public/index.html");
+            ```
 
 
 ## What I’ve learned from this project
