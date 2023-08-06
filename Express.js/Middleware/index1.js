@@ -12,4 +12,6 @@ app.get("/", (req, res) => {
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
+  // to check full path
+  console.log(__dirname + "/public/index.html")
 });

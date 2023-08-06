@@ -130,8 +130,12 @@ Instructor: Dr. Angela Yu
                 import { fileURLToPath } from "url";
                 const __dirname = dirname(fileURLToPath(import.meta.url));
                 // ...
+                // We will use the dynamically generated path to our folder 
                     res.sendFile(__dirname + "/public/index.html");
+                    // to check the path (in index1.js > listen function):
+                    console.log(__dirname + "/public/index.html")
             ```
+
 
 
 ## What I’ve learned from this project
