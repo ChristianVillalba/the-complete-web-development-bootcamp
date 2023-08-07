@@ -135,6 +135,7 @@ Instructor: Dr. Angela Yu
                     // to check the path (in index1.js > listen function):
                     console.log(__dirname + "/public/index.html")
             ```
+        * Now that we have the path, we can use middleware: Body Parser
 
 
 

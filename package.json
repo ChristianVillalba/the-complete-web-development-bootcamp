@@ -1,13 +1,13 @@
 {
   "type": "module",
   "dependencies": {
+    "body-parser": "^1.20.2",
     "inquirer": "^9.2.9",
     "qr-image": "^3.2.0"
   },
   "name": "the-complete-web-development-bootcamp",
   "version": "1.0.0",
   "main": "Node.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
