@@ -122,7 +122,7 @@ Instructor: Dr. Angela Yu
         * Very commonly this is used to handle form data.
         * *Parse:* resolve (a sentence) into its component parts and describe their syntactic roles.
     * Express.js `res.sendFile()` Function
-        * It requires a exact path in order to know which file to send back
+        * It requires a **exact path** in order to know which file to send back
         * In order to get the full path to our index.html:
             * ```javascript
                 // this will generate all of the path up until the path that we want to access
@@ -136,6 +136,22 @@ Instructor: Dr. Angela Yu
                     console.log(__dirname + "/public/index.html")
             ```
         * Now that we have the path, we can use middleware: Body Parser
+            * ```javascript
+                // the neccessary imports:
+                import express from "express";
+                import bodyParser from "body-parser";
+                // ...
+                // body-parser as middleware
+                app.use(bodyParser.urlencoded({ extended: true }))
+                // bodyParserwe.urlencode : we tell what data we want to parse - an HTML FORM
+                // { extended: true } : OBLIGATORY OPTION. 
+                // just determines what is being used behind the scenes to pass the data that's coming in.
+
+                // Now every single request has a "body"
+                app.post('/submit', (req, res) => {
+                    console.log(req.body);
+                }) 
+            ```
 
 
 
