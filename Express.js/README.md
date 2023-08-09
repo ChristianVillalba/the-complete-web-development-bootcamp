@@ -99,12 +99,12 @@ Instructor: Dr. Angela Yu
 * So when a **request** comes in to the **server**... 
 * ...and before it gets **processed** by all of the **route handlers**, 
     * such as our get, pos, put, functions that we've planned for how to deal with a particular request, 
-* **the middleware** (something in between) is able to work with these requests before they get processed and reach their final destinations.
+* **The middleware** (something in between) is able to work with these requests before they get processed and reach their final destinations.
     * Middleware can be used to... 
-        * change aspects of the request or perform various functions on that request before it goes to its final routing.
-        * logging the requests.
-        * authentication
-        * process Errors
+        * Pre-processing: change aspects of the request or perform various functions on that request before it goes to its final routing.
+        * Logging the requests.
+        * Authentication
+        * Process Errors
 <br/>
 
 * Middleware functions can:
@@ -153,7 +153,12 @@ Instructor: Dr. Angela Yu
                 }) 
             ```
 
+### Custom Middleware
 
+* Morgan: HTTP Rrequest logger middleware for node.js
+    * when we send a request to our server,
+    * the morgan middleware function gets trigger before the server gives back its response
+    * 
 
 ## What I’ve learned from this project
 

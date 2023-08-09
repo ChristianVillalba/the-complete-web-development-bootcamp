@@ -3,6 +3,7 @@
   "dependencies": {
     "body-parser": "^1.20.2",
     "inquirer": "^9.2.9",
+    "morgan": "^1.10.0",
     "qr-image": "^3.2.0"
   },
   "name": "the-complete-web-development-bootcamp",
