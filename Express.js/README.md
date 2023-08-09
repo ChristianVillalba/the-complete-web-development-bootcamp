@@ -6,6 +6,17 @@ Instructor: Dr. Angela Yu
 
 ## Description: 
 
+Lessons about middleware:
+* index1.js
+    * How to use body-parser
+* index2.js
+    * How to use morgan
+* index3.js
+    * How to use custom middleware
+* index4.js
+    * How to use custom middleware
+
+
 
 ## Notes
 
@@ -152,16 +163,33 @@ Instructor: Dr. Angela Yu
                     console.log(req.body);
                 }) 
             ```
+<br/>
 
+* Middleware: Morgan 
+    * HTTP Rrequest logger middleware for node.js
+        * when we send a request to our server,
+        * the morgan middleware function gets trigger before the server gives back its response
+        
 ### Custom Middleware
 
-* Morgan: HTTP Rrequest logger middleware for node.js
-    * when we send a request to our server,
-    * the morgan middleware function gets trigger before the server gives back its response
-    * 
+* After seeing Body-parser & Morgan
+* **Custom our own middleware:**
+* ```javascript
+    app.use((req, res, next) => {
+        console.log("Reqest medhod: ", req.method);
+        next()
+    })
+
+    ```
+* In all of the used middlewares, the `app.use` method to specifies a middleware to use when the request comes in.
+* And inside there we can pass in a function: 
+    * It has a request, a response object & a next method
+* `next()` : proceed to the next step of handling that request if there is another middleware
+    * It's very important to express the order that we put our middleware
+    * eg: If you want your request to be authenticated before you log the request or before you pass the request
+
 
 ## What I’ve learned from this project
-
 
 
 ## Author
