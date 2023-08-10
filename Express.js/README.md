@@ -12,11 +12,12 @@ Lessons about middleware:
 * index2.js
     * How to use morgan
 * index3.js
-    * How to use custom middleware
+    * How to use custom middleware and combine middlewares
 * index4.js
-    * How to use custom middleware
-
-
+    * A Band Name Generator
+        * User enter 2 inputs
+        * The combination of both inputs generates a Band Name
+        * Combines Body-Parser and our custom middleware
 
 ## Notes
 
