@@ -6,6 +6,14 @@ Instructor: Dr. Angela Yu
 
 ## Description: 
 
+### Starting EJS & Dependencies
+* Initialize NPM 
+    * `npm init -y`
+* Install express & ejs
+    * `npm i express ejs`
+* Edit package.json:
+    * `"type": "module",`
+
 ## Notes
 
 ###  EJS: Embedded Javascript
