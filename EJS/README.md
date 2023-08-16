@@ -6,6 +6,13 @@ Instructor: Dr. Angela Yu
 
 ## Description: 
 
+* Introduction EJS
+    * Generates a H1 Element
+    * It gives an advice depending of the day of the week
+    * Run Introuduction EJS
+        * `node index.js`
+
+
 ### Starting EJS & Dependencies
 * Initialize NPM 
     * `npm init -y`
@@ -13,6 +20,7 @@ Instructor: Dr. Angela Yu
     * `npm i express ejs`
 * Edit package.json:
     * `"type": "module",`
+
 
 ## Notes
 
@@ -52,6 +60,26 @@ Instructor: Dr. Angela Yu
             <h1/>
         <body>
         ```
+
+###  EJS Tags
+
+* `<%=  %>`
+    * Output JS Variables
+    * Interpret as JS Variables
+    * There will be an output that's going to be put into that HTML or JS file.
+* `<%  %>`
+    * Execute JS Code
+    * This does not give an output
+    * The code in here will be evaluated,     
+    but there will be nothing that shows up when it gets converted to HTML
+* `<%-  %>`
+    * Renders HTML  
+* `<%- include("file.ejs") %>`
+    * Inserts another EJS File
+* `<%#  %>`
+    * EJS Comments
+* `<%%  %%>`
+    * Escape characters to write `<%`  & `%>` in EJS
 
 
 ## Author
