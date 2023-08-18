@@ -81,6 +81,22 @@ Instructor: Dr. Angela Yu
 * `<%%  %%>`
     * Escape characters to write `<%`  & `%>` in EJS
 
+###  Passing Data
+
+* From **server** to **client** side (JS File)
+    * `res.render()` method:
+        * firstly the name of the JS file
+        * then, any sort of data that we want to render.
+        * ```javascript
+            app.get("/", (req, res) => {
+                res.render("index.ejs", { 
+                todayIs: todayIs,
+                advice: adviceOfTheDay,
+            }); 
+
+        ```
+
+and from client to server side.
 
 ## Author
 
