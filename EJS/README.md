@@ -6,12 +6,19 @@ Instructor: Dr. Angela Yu
 
 ## Description: 
 
-* Introduction EJS
-    * Generates a H1 Element
-    * It gives an advice depending of the day of the week
-    * Run Introuduction EJS
-        * `node index.js`
-
+* Exercises in this module:
+    * **Introduction EJS**
+        * Generates a dynamic H1 Element
+        * It gives an advice depending of the day of the week
+    * **EJS - Tags**
+        * Uses diferent EJS Tags to display different type of data
+        * Retrives the current time
+            * Depending if the the seconds is a pair or odd number:
+                * Displays a list of fruits
+                * Displays a paragraph
+    * **EJS - Passing Data**
+        * Users introduce their name (or any name)
+        * App counts and displays the number of letters of the name.  
 
 ### Starting EJS & Dependencies
 * Initialize NPM 
@@ -83,20 +90,39 @@ Instructor: Dr. Angela Yu
 
 ###  Passing Data
 
-* From **server** to **client** side (JS File)
-    * `res.render()` method:
-        * firstly the name of the JS file
-        * then, any sort of data that we want to render.
+* **Passing Data:** From **server** to **client** (EJS) side  
+    * JS File: `res.render()` method
+        * Firstly the name of the JS file
+        * Then, any sort of data that we want to render.
+            * The data is a **key-value** pair (name-data)
         * ```javascript
             app.get("/", (req, res) => {
                 res.render("index.ejs", { 
-                todayIs: todayIs,
-                advice: adviceOfTheDay,
-            }); 
-
+                    todayIs: todayIs,
+                    advice: adviceOfTheDay,
+                }); 
+            });
         ```
+    * EJS File: passing data    
+        * ```javascript
+            <h1>
+                Today is <%= todayIs %>. <br /> 
+                <%= advice %>
+            </h1>
+            ```
+* **No Data in the EJS File:** `locals.` variable
+    * EJS, unlike JS, doesn't scope variabless.
+        * It doesn't check if the variables actually exist before it tries them.
+        * This may crash our app. 
+    * Creating `locals` variable in our JS file
+        * A way to access all of the variables that get sent over with `res.render`
+        * `res.locals = {name: data}`
+        * `locals` variable always exists
+            * We can always use it to check for the existence of variables passed over to EJS.
+            * "If this **variable exist**, pass it over `<HtmlElement>`"
 
-and from client to server side.
+* **Passing Data:** From **client** (EJS) to **server** side
+    * eg: form
 
 ## Author
 
