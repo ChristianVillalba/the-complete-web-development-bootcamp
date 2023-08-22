@@ -122,7 +122,30 @@ Instructor: Dr. Angela Yu
             * "If this **variable exist**, pass it over `<HtmlElement>`"
 
 * **Passing Data:** From **client** (EJS) to **server** side
-    * eg: form
+    * EJS Passing data example
+    * In the **JS file**:
+    * ```javascript
+        // when the user submits some input...
+        app.post("/submit", (req, res) => {
+            const numLetters = req.body["fName"].length + req.body["lName"].length;
+            res.render("index.ejs", { 
+                numberOfLetters: numLetters, 
+            });
+        });
+        ```
+    * In the **EJS file**:
+    * ```javascript
+        // The locals. variable checks if the user already introduced some input
+        <% if (locals.letterNumber) { %>
+            //If the user introduced an input, it will be displayed: 
+            <h1>There are <%= letterNumber %> letters in your name.</h1>
+        <% } else { %>
+            // If the user didn't introduced any input yet: 
+            <h1>Enter your name below 👇</h1>
+        <% } %>
+        ```
+
+
 
 ## Author
 

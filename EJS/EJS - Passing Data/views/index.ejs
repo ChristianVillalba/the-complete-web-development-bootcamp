@@ -9,9 +9,12 @@
 
 <body>
   <!-- Write your code here -->
+  The locals. variable checks if the user already introduced some input
   <% if (locals.letterNumber) { %>
+    <!-- If the user introduced an input displays: -->
     <h1>There are <%= letterNumber %> letters in your name.</h1>
     <% } else { %>
+      <!-- If the user didn't introduced any input: -->
       <h1>Enter your name below 👇</h1>
       <% } %>
   
