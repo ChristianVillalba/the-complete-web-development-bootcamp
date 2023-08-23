@@ -20,14 +20,13 @@ Instructor: Dr. Angela Yu
         * Users introduce their name (or any name)
         * App counts and displays the number of letters of the name.  
 
-### Starting EJS & Dependencies
+## Starting EJS & Dependencies
 * Initialize NPM 
     * `npm init -y`
 * Install express & ejs
     * `npm i express ejs`
 * Edit package.json:
     * `"type": "module",`
-
 
 ## Notes
 
@@ -145,7 +144,34 @@ Instructor: Dr. Angela Yu
         <% } %>
         ```
 
+###  Partials & Layouts
 
+* The **CSS and the images** that we want to include are **static files**
+    * Files that don't ever change.
+    * Unlike the files that are being generated dynamically from your back end.
+* Node based backends:
+    * We create a **public folder** where we add in all of our **static files**
+    * We use the middleware to point out where our static files are located
+        * ```javascript
+            app.use(express.static("public"));
+        ```
+    * We linked to EJS files relative to the location of our public folder
+        * `href="/styles/layout.css"`
+* Example: if on our website we have some navigation links 
+    * Different pages in our website will render different files.
+    * But the way that I'm getting to these locations is actually by sending get requests to a particular route.
+        * The **dynamic parts** of our website are routed and their locations are **generated dynamically**
+        * whereas , the **static parts** of our website (images, CSS...) doesn't need to be generated dynamically.
+
+#### Templating
+
+* EJS template engine helps to create an HTML template with minimal code
+* Partials: We can use EJS to reduce the repeated code in our website.
+    * ```javascript
+        <%- inlcude("header.js") %>
+        // ...
+        <%- inlcude("footer.js") %>
+    ```
 
 ## Author
 
