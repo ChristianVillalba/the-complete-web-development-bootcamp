@@ -148,30 +148,41 @@ Instructor: Dr. Angela Yu
 
 * The **CSS and the images** that we want to include are **static files**
     * Files that don't ever change.
-    * Unlike the files that are being generated dynamically from your back end.
+    * Unlike the files that are being generated dynamically from our back end.
+    * Trying to add static files to Node projects won't work.
 * Node based backends:
     * We create a **public folder** where we add in all of our **static files**
     * We use the middleware to point out where our static files are located
         * ```javascript
+            // In index.js
             app.use(express.static("public"));
         ```
     * We linked to EJS files relative to the location of our public folder
         * `href="/styles/layout.css"`
 * Example: if on our website we have some navigation links 
     * Different pages in our website will render different files.
-    * But the way that I'm getting to these locations is actually by sending get requests to a particular route.
+    * But the way that I'm getting to these locations is actually by sending **get requests** to a particular **route**.
         * The **dynamic parts** of our website are routed and their locations are **generated dynamically**
         * whereas , the **static parts** of our website (images, CSS...) doesn't need to be generated dynamically.
 
 #### Templating
 
-* EJS template engine helps to create an HTML template with minimal code
+* EJS template engine helps to create an HTML template with minimal code.
+* Templating we replace parts of our code using these EJS tags in order to insert bits of dynamic content
+    * ```javascript
+        <h1>
+            Today is <%= todayIs %>. <br /> 
+            <%= advice %>
+        </h1>
+    ```
 * Partials: We can use EJS to reduce the repeated code in our website.
     * ```javascript
         <%- inlcude("header.js") %>
-        // ...
+        // ... code code code
         <%- inlcude("footer.js") %>
     ```
+
+#### Partials
 
 ## Author
 
