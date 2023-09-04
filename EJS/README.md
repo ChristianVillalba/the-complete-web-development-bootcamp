@@ -165,7 +165,7 @@ Instructor: Dr. Angela Yu
         * The **dynamic parts** of our website are routed and their locations are **generated dynamically**
         * whereas , the **static parts** of our website (images, CSS...) doesn't need to be generated dynamically.
 
-#### Templating
+#### Templating & Partials
 
 * EJS template engine helps to create an HTML template with minimal code.
 * Templating we replace parts of our code using these EJS tags in order to insert bits of dynamic content
@@ -181,8 +181,6 @@ Instructor: Dr. Angela Yu
         // ... code code code
         <%- inlcude("footer.js") %>
     ```
-
-#### Partials
 
 ## Author
 
