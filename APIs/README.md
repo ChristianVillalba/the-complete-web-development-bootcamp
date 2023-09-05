@@ -32,11 +32,11 @@ Instructor: Dr. Angela Yu
 <br />
 
 * API Endpoints
-    * *BaseURL/****endpoint***
+    * <i>BaseURL/<b>endpoint</b></i>
     * The endpoint is basically a different route on the API provider server 
     * The documentation tents to give an example of endpoints and its purpose
 * Query Parameters
-    * *BaseURL/endpoint****?query=value***
+    * <i>BaseURL/endpoint<b>?query=value</b></i>
 
 
 
