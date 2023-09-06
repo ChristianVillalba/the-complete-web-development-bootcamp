@@ -31,12 +31,19 @@ Instructor: Dr. Angela Yu
     * This module is about how to use Public APIs
 <br />
 
-* API Endpoints
+* **API Endpoints**
     * <i>BaseURL/<b>endpoint</b></i>
     * The endpoint is basically a different route on the API provider server 
     * The documentation tents to give an example of endpoints and its purpose
-* Query Parameters
+* **Query Parameters**
     * <i>BaseURL/endpoint<b>?query=value</b></i>
+    * Queries 
+        * **?** Marks the start of the query
+        * Provide additional information or some parameters to a request
+        * Add a key=value pair into the URL 
+    * Multiple Query Parameters
+        * **&** separates the queries
+        * <i>BaseURL/endpoint<b>?query=value&query2=value2&query3=value3</b></i>
 
 
 
