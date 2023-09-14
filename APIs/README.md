@@ -8,19 +8,19 @@ Instructor: Dr. Angela Yu
 
 ## Notes
 
-### API
+### API: Application Programming Interface
 
-* **API Application Programming Interface**  
+* **API** 
     * Set of definitions, rules and protocols for building and integrating application software.
-    * eg: two programms need to communicate because they provide different pieces of functionality
-        * We plance an **interface** between them (API) that bridges the communication between different pieces of software
+    * eg: two programms need to communicate because they provide different pieces of functionality:
+        * We place an **interface** between them (API) that bridges the communication between different pieces of software
         * OpenWeather collects data, we pick that data and render dynamic content based on that information
     * There are different types of APIs
         * GraphQL, SOAP, Rest:API ...
         * These are arquitectural sytles
-    * **REST APIs**
-        * The most common used API on web development
-        * It uses the **HTTP protocol** to interact with the API (get, post, put, patch, delete)
+* **REST APIs**
+    * The most common used API on web development
+    * It uses the **HTTP protocol** to interact with the API (get, post, put, patch, delete)
 
 ### Formatting API Request
 
@@ -44,6 +44,22 @@ Instructor: Dr. Angela Yu
     * Multiple Query Parameters
         * **&** separates the queries
         * <i>BaseURL/endpoint<b>?query=value&query2=value2&query3=value3</b></i>
+* **Path Parameters**
+    * <i>BaseURL/endpoint/<b>path-parameter</b></i>
+    * Parameter that does change
+    * Used to find some specific resource that exists [in the API] (id's , user name...)
+    * eg: GET https://bored-api.appbrewery.com/activity/3943506 
+* <i>Note: Difference query vs path parameters</i>
+    * Query Parameters:
+        * Filtering & Searching
+    * Path Parameters:
+        * Identifying a resource by some specific parameter
+    
+### Introduction to JSON
+    
+
+
+
 
 
 
