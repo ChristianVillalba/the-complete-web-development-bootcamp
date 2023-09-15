@@ -56,7 +56,12 @@ Instructor: Dr. Angela Yu
         * Identifying a resource by some specific parameter
     
 ### Introduction to JSON
-    
+
+* Json: JavaScript object notation.
+* A way to format data that can be sent over the internet in a readable but also efficient way.
+    * it's structured after a JavaScript object.
+    * The key difference is that a Json is serialized into a string.
+        *  
 
 
 
