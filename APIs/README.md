@@ -61,9 +61,44 @@ Instructor: Dr. Angela Yu
 * A way to format data that can be sent over the internet in a readable but also efficient way.
     * it's structured after a JavaScript object.
     * The key difference is that a Json is serialized into a string.
-        *  
-
-
+        * JS Object
+        * ```javascript
+            const Cristian = {
+                name: "Cristian",
+                id: 1234,
+                genres: ["Heavy Metal", "Rock", "Rap"],
+                Weapons: [
+                    {primary: "Sword"},
+                    {secondary: "Knife"}
+                ]
+            }
+            ```
+        * JSON
+        * ```javascript
+            {
+                "name": "Cristian",
+                "id": 1234,
+                "genres": ["Heavy Metal", "Rock", "Rap"],
+                "Weapons": [
+                    {primary: "Sword"},
+                    {secondary: "Knife"}
+                ]
+            }
+            ```
+        * When transfered will look in one single line:
+        * ```javascript
+            {"name": "Cristian", "id": 1234,"genres": ["Heavy Metal", "Rock", "Rap"],
+            "Weapons": [{primary: "Sword"},{secondary: "Knife"}]}
+            ```
+* Tool: JSON Visualizer
+    * Adapts JSON file to human-readable format
+    * [Online JSON Viewer](https://jsonviewer.stack.hu/)
+* **Serialization**
+    * Turning a JavaScript object into a Json
+    * Neccessary to send a Json across the internet
+    * It's a method available in the Json Module
+        * `const jsonData = JSON.stringfy(data);`
+    * JavaScript object into a string able to represent all of the different nesting and relationships in that object.
 
 
 
