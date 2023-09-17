@@ -99,9 +99,10 @@ Instructor: Dr. Angela Yu
     * It's a method available in the Json Module
         * `const jsonData = JSON.stringfy(data);`
     * JavaScript object into a string able to represent all of the different nesting and relationships in that object.
-
-
-
+* **Deserializing / Json Parsing**
+    * Turning a Json into a JS 
+    * It's a method available in the Json Module
+        * `const data = JSON.parse(jsonData);`
 
 ## Author
 
