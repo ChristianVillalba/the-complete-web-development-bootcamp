@@ -5,6 +5,11 @@ Notes and projects based on: EJS module
 Instructor: Dr. Angela Yu 
 
 ## Description: 
+* 01 - JSON
+    * Website that provides recipes to make tacos
+    * It shows the title, 3 buttons (ingredients) and the text: "Pick your favourite taco ingredient"
+    * Once the users selects their favourite ingredient, the website provides the receipt to prepare the taco based.
+
 
 ## Notes
 
@@ -103,6 +108,29 @@ Instructor: Dr. Angela Yu
     * Turning a Json into a JS 
     * It's a method available in the Json Module
         * `const data = JSON.parse(jsonData);`
+<br />
+
+* 01 - JSON: How it works:
+    * [in index.js]
+    * When we click on the buttons, a **post** request is sent (`/recipe` route)
+    * The **value** of the request will change depending on the button pressed
+    * The **value** is accessed using `bodyParser`
+        * We can acces body thanks to bodyParser in `switch (req.body.choice)`
+    * `switch` will check what opttion the user chooses and we sent the relevant piece of `data` 
+        * `data = JSON.parse(recipeJSON)[0];` parses our data (receiptJSON) into a JS Obj stored as "data"
+        * We extracted the item choosen, same as a JS Array `[0] / [1] / [2]`
+        * *Note:* `const recipeJSON` (our data) is included in our file, but it could be provided by a 3rd pary api
+    * We set the data `let data`
+    * And we send it over when we render our JS file `{receipt: data}`
+        * At the bottom of the file, `res.redirect("/")` goes to `app.get("/", ...` sends the data under the key of recipe `{receipt: data}`
+    * The **value** is located in the index.ejs file
+    * [in index.ejs]
+    * We check if our recipt exits `<%if (locals.recipe) {%>`
+
+
+    * Notes: 
+        * Recipe.json includes all the recipes in a deserailized format
+        * RecipeJSON in index.js, shows the recipes in a serialized format (long string) to be easyly transfered.
 
 ## Author
 

@@ -16,6 +16,7 @@
   </form>
   <div id="recipeContainer" class="hidden">
 
+    <!-- We check if our recipt exits -->
     <%if (locals.recipe) {%>
 
       <h2 id="recipeTitle">
@@ -39,6 +40,8 @@
       </ul>
 
       <%} else {%>
+
+        <!-- If the recipt does NOT exists -->
         <h2>Pick your favourite taco ingredient 👆</h2>
         <%}%>
 
