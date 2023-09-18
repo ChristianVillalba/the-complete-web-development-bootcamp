@@ -12,11 +12,15 @@ const recipeJSON =
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
+let data;
+
 app.get("/", (req, res) => {
-  res.render("index.ejs");
+  res.render("index.ejs", { recipe: data });
+  // sends the data under the key of recipe
 });
 
 app.post("/recipe", (req, res) => {
+  // we can acces body thanks to bodyParser
   switch (req.body.choice) {
     case "chicken":
       data = JSON.parse(recipeJSON)[0];
