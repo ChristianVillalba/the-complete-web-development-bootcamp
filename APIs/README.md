@@ -5,10 +5,21 @@ Notes and projects based on: EJS module
 Instructor: Dr. Angela Yu 
 
 ## Description: 
-* 01 - JSON
+* **01 - JSON**
     * Website that provides recipes to make tacos
     * It shows the title, 3 buttons (ingredients) and the text: "Pick your favourite taco ingredient"
     * Once the users selects their favourite ingredient, the website provides the receipt to prepare the taco based.
+* **02 - Axios**
+    * Website that provides some task to do when you are bored
+    * It fetchs a random activity from that endpoint which was https://bored-api.appbrewery.com/
+    * A random activity that gets populated into a card with the information:
+        * Name of the activity
+        * Type of activity
+        * Number of participants
+    * We can request activities with specific type or number of participants 
+    * There are cases where the search will fail and produce and Error
+    * We handle the Error by passing a message to the user: "No activities that match your criteria"
+
 
 
 ## Notes
@@ -131,6 +142,31 @@ Instructor: Dr. Angela Yu
     * Notes: 
         * Recipe.json includes all the recipes in a deserailized format
         * RecipeJSON in index.js, shows the recipes in a serialized format (long string) to be easyly transfered.
+
+### Axios: Server-side API Requests
+
+* Previously we saw how how to structure our API requests and make our API requests from Postman
+* If we need **our server** to make the **API requests** (to someone's elese server):
+    * **Note:** This is a common operation when we're dealing with node and express backends.
+    * ```
+        Our Server → Get request → 3rd party Server    
+        3rd party server → response → Our Server
+        ```
+    * We can make this through a Public API
+    * Using **native node modules** (such as the Https module)
+        * The code for this would look quite long and complicated   
+    * Using **Axios** (it's a native node module available in npm)
+        * It makes the request and responses much simplier 
+        * It simplifies the commonly used mothods and requirements
+        * Our request (`axios.get`) is promised based so we can use `await` to handle the response 
+        * When we have **JSON data** back, Axios **automatically turn** it into a **JS Object** 
+            * No extra step: JSON.parse
+        * Axios also has much better error handling
+<br />
+
+* 02 - Axios: How it works:
+    
+
 
 ## Author
 
