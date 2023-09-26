@@ -1,6 +1,6 @@
 # API: Application Programming Interface
 
-Notes and projects based on: EJS module         
+Notes and projects based on:    
 [The Complete Web Development Bootcamp](https://www.udemy.com/course/the-complete-web-development-bootcamp/)          
 Instructor: Dr. Angela Yu 
 

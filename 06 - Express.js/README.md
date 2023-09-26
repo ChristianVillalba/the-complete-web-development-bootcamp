@@ -1,6 +1,6 @@
 # EXPRESS JS WITH NODE JS
 
-Notes and projects based on: Bootstrap module        
+Notes and projects based on:         
 [The Complete Web Development Bootcamp](https://www.udemy.com/course/the-complete-web-development-bootcamp/)          
 Instructor: Dr. Angela Yu 
 
@@ -104,20 +104,26 @@ Lessons about middleware:
 
 ## Express Middleware
 
-* Express is a routing and middleware web framework that has minimal functionality of its own: 
-    * An Express application is essentially a series of middleware function calls.
-* Middleware functions have access to the **request object** (req), **the response object** (res), and the **next middleware function** in the application’s request-response cycle. 
+* Middleware:  is a type of computer software that 
+    * provides services to software applications
+    * help developers and operators build and deploy applications more efficiently
+    * software glue: the connective tissue between applications, data, and users
+
+* Middleware have access to 
+    * the **request object** (req), 
+    * the **response object** (res), 
+    * and the **middleware function**  (something in between) in the application’s request-response cycle. 
 <br/>
 
 * So when a **request** comes in to the **server**... 
 * ...and before it gets **processed** by all of the **route handlers**, 
     * such as our get, pos, put, functions that we've planned for how to deal with a particular request, 
-* **The middleware** (something in between) is able to work with these requests before they get processed and reach their final destinations.
-    * Middleware can be used to... 
-        * Pre-processing: change aspects of the request or perform various functions on that request before it goes to its final routing.
-        * Logging the requests.
-        * Authentication
-        * Process Errors
+* **The middleware** is able to work with these requests before they get processed and reach their final destinations.
+* Middleware can be used to... 
+    * Pre-processing: change aspects of the request or perform various functions on that request before it goes to its final routing.
+    * Logging the requests.
+    * Authentication
+    * Process Errors
 <br/>
 
 * Middleware functions can:
@@ -171,6 +177,21 @@ Lessons about middleware:
     * HTTP Request logger middleware for node.js
         * when we send a request to our server,
         * the morgan middleware function gets trigger before the server gives back its response
+        * It output in our console the logging information about the request
+    * ```javascript
+        import express from "express";
+        import morgan from "morgan"
+
+        const app = express();
+        const port = 3000;
+        app.use(morgan("dev")); // combined, tiny, short ... check documentation
+
+
+        app.get("/", (req, res) => {
+            res.send("Hello");
+        });
+    ```
+
         
 ### Custom Middleware
 
@@ -189,9 +210,6 @@ Lessons about middleware:
 * `next()` : proceed to the next step of handling that request if there is another middleware
     * It's very important to express the order that we put our middleware
     * eg: If you want your request to be authenticated before you log the request or before you pass the request
-
-
-## What I’ve learned from this project
 
 
 ## Author

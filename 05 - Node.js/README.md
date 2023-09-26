@@ -1,6 +1,6 @@
 # NODE JS
 
-Notes and projects based on: Bootstrap module        
+Notes and projects based on: Node.js module        
 [The Complete Web Development Bootcamp](https://www.udemy.com/course/the-complete-web-development-bootcamp/)          
 Instructor: Dr. Angela Yu 
 
