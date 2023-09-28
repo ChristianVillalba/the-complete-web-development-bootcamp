@@ -31,17 +31,27 @@ Instructor: Dr. Angela Yu
 ## Notes
 
 ###  EJS: Embedded Javascript
-* EJS or Embedded Javascript Templating is a templating engine used by Node.js
-    * The separation of concerns: we need to use something called a templating language.
-    * Template engine helps to create an HTML template with minimal code. 
-    * It can inject data into an HTML template on the client side and produce the final HTML.
-* It's almost like having a JavaScript module that can run JS code inside a HTML file 
+
+* EJS (Embedded JavaScript Templating) is a **template engine** for Node-JS. 
+    * It lets us embed JS code in a template language (EJS)
+    * That code is then used to generate HTML
+* EJS Templating:
+    * A template engine is software designed to 
+        * Combine templates with a data model 
+        * Produce, in our case, real HTML code:
+        * `<H1>Hello, <%= name %>! <H1>`
+    * It handles the task of interpolating **data** into **HTML code** with minimal code while providing some features
+    * The separation of concerns
     * It ends with the `.ejs` file extension.
-    * Essentially all we've got is just HTML, but with bits of JS enclosed inside a special syntax
-* ***Note: It might require EJS Language Support for our text editor***
-    * [EJS language support](https://marketplace.visualstudio.com/items?itemName=DigitalBrainstem.javascript-ejs-support)
+
 * ***Note: It requires Express, and ejs***
     * `$ npm install ejs`
+
+* ***Note: It might require EJS Language Support for our text editor***
+    * [EJS language support](https://marketplace.visualstudio.com/items?itemName=DigitalBrainstem.javascript-ejs-support)
+<br />
+
+* Difference Static Files & Dynamic Files
 * **Static files:** 
     * Don't change
     * ```javascript
