@@ -99,36 +99,59 @@ Instructor: Dr. Angela Yu
 
 ###  Passing Data
 
-* **Passing Data:** From **server** to **client** (EJS) side  
-    * JS File: `res.render()` method
+* **Passing Data:** From **server** to **client** side  (EJS)
+    * `res.render()` method
         * Firstly the name of the JS file
         * Then, any sort of data that we want to render.
             * The data is a **key-value** pair (name-data)
         * ```javascript
             app.get("/", (req, res) => {
-                res.render("index.ejs", { 
-                    todayIs: todayIs,
-                    advice: adviceOfTheDay,
-                }); 
+                res.render("index.ejs", 
+                    { name: "Christian";}
+                ); 
             });
         ```
     * EJS File: passing data    
         * ```javascript
             <h1>
-                Today is <%= todayIs %>. <br /> 
-                <%= advice %>
+                Hello, <%= name %>
             </h1>
             ```
-* **No Data in the EJS File:** `locals.` variable
-    * EJS, unlike JS, doesn't scope variabless.
-        * It doesn't check if the variables actually exist before it tries them.
-        * This may crash our app. 
+* **No Data in the Server to EJS File:** 
+    * `locals` variable
+        * A way to access all of the variables that get sent over with `res.render`
+    * No Data in the Server can happen quite frequently. This may crash our app.  (the .js file does not store data)
+
     * Creating `locals` variable in our JS file
         * A way to access all of the variables that get sent over with `res.render`
         * `res.locals = {name: data}`
-        * `locals` variable always exists
-            * We can always use it to check for the existence of variables passed over to EJS.
+        * `locals` variable always exists so We can use it to check for the existence of variables passed over to EJS.
             * "If this **variable exist**, pass it over `<HtmlElement>`"
+        * ```javascript
+            app.get("/", (req, res) => {
+                res.render("index.ejs",
+                <!-- MISSING DATA  -->
+                ); 
+            });
+            ```
+
+        <!-- CONTINUE HERE -->
+
+
+        * ```javascript
+            <% if (locals.letterNumber) { %>
+        <!-- If the user introduced an input, it will be displayed: -->
+        <h1>There are <%= letterNumber %> letters in your name.</h1>
+        <% } else { %>
+        <!-- If the user didn't introduced any input: -->
+        <h1>Enter your name below 👇</h1>
+        <% } %>
+            ```
+    <br />
+    * Note: a basic if statement to check if there is var available won't work `if (myVarar)`
+        * trying to use and **if statement :** EJS, unlike JS, doesn't scope variabless.
+        * It doesn't check if the variables actually exist before it tries them.
+        * This may crash our app. 
 
 * **Passing Data:** From **client** (EJS) to **server** side
     * EJS Passing data example
