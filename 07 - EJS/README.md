@@ -123,29 +123,29 @@ Instructor: Dr. Angela Yu
     * No Data in the Server can happen quite frequently. This may crash our app.  (the .js file does not store data)
 
     * Creating `locals` variable in our JS file
-        * A way to access all of the variables that get sent over with `res.render`
-        * `res.locals = {name: data}`
         * `locals` variable always exists so We can use it to check for the existence of variables passed over to EJS.
-            * "If this **variable exist**, pass it over `<HtmlElement>`"
+        * we can set manually `res.locals = {name: data}`
+            
         * ```javascript
             app.get("/", (req, res) => {
                 res.render("index.ejs",
-                <!-- MISSING DATA  -->
+                <!-- MISSING DATA || res.locals = {name: data} --> 
+                <!-- {fruits: [mango, bannana, orange]} -->
                 ); 
             });
             ```
-
-        <!-- CONTINUE HERE -->
-
-
+        * "If this **variable exist**, pass it over `<HtmlElement>`"
         * ```javascript
-            <% if (locals.letterNumber) { %>
-        <!-- If the user introduced an input, it will be displayed: -->
-        <h1>There are <%= letterNumber %> letters in your name.</h1>
-        <% } else { %>
-        <!-- If the user didn't introduced any input: -->
-        <h1>Enter your name below 👇</h1>
-        <% } %>
+            <% if (locals.fruits) { %> 
+            <%# "If the value (str) for fruits exists, it will be displayed:" #%>
+                <ul>
+                    <% fruits.forEach((fruit) => { %> 
+                    <li>
+                        <%= fruit %>
+                    <li>
+                    <% }) %>
+                </ul>
+            <% } %>
             ```
     <br />
     * Note: a basic if statement to check if there is var available won't work `if (myVarar)`
