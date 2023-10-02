@@ -153,6 +153,13 @@ Instructor: Dr. Angela Yu
         * It doesn't check if the variables actually exist before it tries them.
         * This may crash our app. 
 
+
+
+<!-- CONTINUE HERE -->
+
+
+
+
 * **Passing Data:** From **client** (EJS) to **server** side
     * EJS Passing data example
     * In the **JS file**:
