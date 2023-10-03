@@ -154,16 +154,21 @@ Instructor: Dr. Angela Yu
         * This may crash our app. 
 
 
-
-<!-- CONTINUE HERE -->
-
-
-
-
 * **Passing Data:** From **client** (EJS) to **server** side
-    * EJS Passing data example
+    * EJS Passing data example: Form with post request
+    * In the EJS file
+        * ```javascript
+            <form action="/submit" method="POST">
+            <input type="text" value="fName"> 
+            <input type="text" value="lName"> 
+            <input type="submit" value="OK">
+            </form> 
+            ```
+
     * In the **JS file**:
     * ```javascript
+        // Body parser: parses incoming request bodies. "req.body"
+        app.use(bodyParser.urlencoded({ extended: true })); 
         // when the user submits some input...
         app.post("/submit", (req, res) => {
             const numLetters = req.body["fName"].length + req.body["lName"].length;
@@ -175,9 +180,9 @@ Instructor: Dr. Angela Yu
     * In the **EJS file**:
     * ```javascript
         // The locals. variable checks if the user already introduced some input
-        <% if (locals.letterNumber) { %>
+        <% if (locals.numberOfLetters) { %>
             //If the user introduced an input, it will be displayed: 
-            <h1>There are <%= letterNumber %> letters in your name.</h1>
+            <h1>There are <%= numberOfLetters %> letters in your name.</h1>
         <% } else { %>
             // If the user didn't introduced any input yet: 
             <h1>Enter your name below 👇</h1>
