@@ -223,7 +223,7 @@ Instructor: Dr. Angela Yu
 * Partials: We can use EJS to reduce the repeated code in our website.
     * ```javascript
         <%- inlcude("header.js") %>
-        // ... code code code
+        // ... code code code...
         <%- inlcude("footer.js") %>
     ```
 
