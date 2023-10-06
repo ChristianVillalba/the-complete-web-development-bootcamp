@@ -28,12 +28,15 @@ Instructor: Dr. Angela Yu
 
 * **API** 
     * Set of definitions, rules and protocols  that define how different software can interact with each other..
+
     * eg: two programms need to communicate because they provide different pieces of functionality:
     * We place an **interface** between them (API) that bridges the communication between different pieces of software
-        * OpenWeather collects data, we pick that data and render dynamic content based on that information
+    * OpenWeather collects data, we pick that data and render dynamic content based on that information
+        
     * There are different types of APIs
         * GraphQL, SOAP, Rest:API ...
         * These are arquitectural sytles
+        
 * **REST APIs**
     * The most common used API on web development
     * It uses the **HTTP protocol** to interact with the API (get, post, put, patch, delete)
