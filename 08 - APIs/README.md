@@ -11,7 +11,7 @@ Instructor: Dr. Angela Yu
     * Once the users selects their favourite ingredient, the website provides the receipt to prepare the taco based.
 * **02 - Axios**
     * Website that provides some task to do when you are bored
-    * It fetchs a random activity from that endpoint which was https://bored-api.appbrewery.com/
+    * It fetchs a random activity from that endpoint which is https://bored-api.appbrewery.com/random
     * A random activity that gets populated into a card with the information:
         * Name of the activity
         * Type of activity
@@ -139,7 +139,6 @@ Instructor: Dr. Angela Yu
     * The **value** is located in the index.ejs file
     * [in index.ejs]
     * We check if our recipt exits `<%if (locals.recipe) {%>`
-
 
     * Notes: 
         * Recipe.json includes all the recipes in a deserailized format
