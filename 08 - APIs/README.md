@@ -112,13 +112,13 @@ Instructor: Dr. Angela Yu
     * Adapts JSON file to human-readable format
     * [Online JSON Viewer](https://jsonviewer.stack.hu/)
 * **Serialization**
-    * Turning a JavaScript object into a Json
+    * Turning a **JS Object** into a **Json**.
     * Neccessary to send a Json across the internet
     * It's a method available in the Json Module
         * `const jsonData = JSON.stringfy(data);`
     * JavaScript object into a string able to represent all of the different nesting and relationships in that object.
 * **Deserializing / Json Parsing**
-    * Turning a Json into a JS 
+    * Turning a **Json** into a **JS Object**.
     * It's a method available in the Json Module
         * `const data = JSON.parse(jsonData);`
 <br />
@@ -147,23 +147,31 @@ Instructor: Dr. Angela Yu
 
 ### Axios: Server-side API Requests
 
-* Previously we saw how how to structure our API requests and make our API requests from Postman
-* If we need **our server** to make the **API requests** (to someone's elese server):
-    * **Note:** This is a common operation when we're dealing with node and express backends.
+* Previously we saw how to:  
+    * Structure our API requests 
+    * Make our API requests (from Postman)
+* **Server-side API Requests** 
+    * **Our Server** makes the **API requests** to **Someone's else Server**:
     * ```
-        Our Server → Get request → 3rd party Server    
-        3rd party server → response → Our Server
+        Our Server → Get Request → 3rd party Server    
+        3rd party server → Response → Our Server
         ```
+    * **Note:** This is a common operation when we're dealing with node and express backends.
     * We can make this through a Public API
     * Using **native node modules** (such as the Https module)
         * The code for this would look quite long and complicated   
-    * Using **Axios** (it's a native node module available in npm)
-        * It makes the request and responses much simplier 
-        * It simplifies the commonly used mothods and requirements
-        * Our request (`axios.get`) is promised based so we can use `await` to handle the response 
-        * When we have **JSON data** back, Axios **automatically turn** it into a **JS Object** 
-            * No extra step: JSON.parse
-        * Axios also has much better error handling
+<br/>
+
+* **Axios** 
+    * "Axios is a promise-based HTTP Client for node.js and the browser"
+    * It's a native node module available in npm
+        * npm install axios`
+    * It makes the **Request & Responses** much **simplier**
+    * It simplifies the commonly used methods and requirements
+    * Our request (`axios.get`) is promised based so we can use `.then` or `async`'s `await` to handle the Response 
+    * When we have **JSON data** back, Axios **automatically turn** it into a **JS Object** 
+        * No extra step: JSON.parse
+    * Axios also has much better error handling
 <br />
 
 * 02 - Axios: How it works:
