@@ -36,9 +36,9 @@
     <section id="cards" class="cards">
 
       <!-- If we succesfully retrieve an activity fom the API-->
+      <% if (locals.data) { %> <!-- check if we succesfully retrieve an activity fom the API-->
 
       <article class="card-item">
-        <% if (locals.myData) { %> <!-- check if we succesfully retrieve an activity fom the API-->
         <h2 class="card-activity">
           <!-- Show Activity -->
           <%=  data.activity %>
@@ -58,11 +58,10 @@
       <%}%>
 
       <!-- If the resource requested doesn't exist -->
-
       <div id="tag-error" class="tag-error">
         <!-- Show any errors that were sent from the backend -->
         <% if (locals.error) { %>
-          <%=error%>
+          <%= error %>
         <% } %>
       </div>
 

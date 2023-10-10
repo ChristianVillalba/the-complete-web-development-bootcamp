@@ -123,7 +123,7 @@ Instructor: Dr. Angela Yu
         * `const data = JSON.parse(jsonData);`
 <br />
 
-* 01 - JSON: How it works:
+<!-- * 01 - JSON: How it works:
     * [in index.js]
     * When we click on the buttons, a **post** request is sent (`/recipe` route)
     * The **value** of the request will change depending on the button pressed
@@ -142,7 +142,7 @@ Instructor: Dr. Angela Yu
 
     * Notes: 
         * Recipe.json includes all the recipes in a deserailized format
-        * RecipeJSON in index.js, shows the recipes in a serialized format (long string) to be easyly transfered.
+        * RecipeJSON in index.js, shows the recipes in a serialized format (long string) to be easyly transfered. -->
 
 ### Axios: Server-side API Requests
 
@@ -173,8 +173,12 @@ Instructor: Dr. Angela Yu
     * Axios also has much better error handling
 <br />
 
-* 02 - Axios: How it works:
-    
+### API : Authentication and Authorization
+
+The ability to prove that you have the rights to access a particular API.
+
+
+
 
 
 ## Author
