@@ -164,7 +164,7 @@ Instructor: Dr. Angela Yu
 * **Axios** 
     * "Axios is a promise-based HTTP Client for node.js and the browser"
     * It's a native node module available in npm
-        * npm install axios`
+        * `npm install axios`
     * It makes the **Request & Responses** much **simplier**
     * It simplifies the commonly used methods and requirements
     * Our request (`axios.get`) is promised based so we can use `.then` or `async`'s `await` to handle the Response 
@@ -175,7 +175,20 @@ Instructor: Dr. Angela Yu
 
 ### API : Authentication and Authorization
 
-The ability to prove that you have the rights to access a particular API.
+The ability to prove that you have the rights to access a particular API: 
+* **Authentication** verifies the **identity** of a user or service
+* **Authorization** determines their **access rights**
+
+**Protect the resources** behind our API by using authentication:
+* We need to identify who is the client making the request.
+* Check if the client has permission to access that resource.
+* Give back a response depending on whether the client is authorized to make that request.
+
+Authentication: 4 Tiers (Non Offical) 
+* 0 - No Authentication 
+* 1 - Basic Authentication
+* 2 - API Key Authorisation
+* 3 - Token Based Authentication  
 
 
 
