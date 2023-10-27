@@ -175,18 +175,34 @@ Instructor: Dr. Angela Yu
 
 ### API : Authentication and Authorization
 
-The ability to prove that you have the rights to access a particular API: 
 * **Authentication** verifies the **identity** of a user or service
 * **Authorization** determines their **access rights**
 
-**Protect the resources** behind our API by using authentication:
+**Protect the resources** behind our API by using authentication &  authorization:
 * We need to identify who is the client making the request.
 * Check if the client has permission to access that resource.
 * Give back a response depending on whether the client is authorized to make that request.
 
 Authentication: 4 Tiers (Non Offical) 
 * 0 - No Authentication 
+    * No changing data that needs to be protected.
+    * No data that needs to be assigned to a particular user.
+    * It's super inclusive: Anyone can use it.
+    * It's super easy to get started
+    * eg: Prevents the abuse of the API by adding a rate limit
+    * eg: 100 requests every 15min. Check the IP and the number of requests  
 * 1 - Basic Authentication
+    * Authenticating to the API provider.
+    * Using **Username and Password** when you make your API request
+    * Usually, authentication is done is by passing over a **base 64 encoded** string in the header of the request.
+    * **Base 64 Encoding:** 
+        * taking text (ASCII), 
+        * coverted it to bits, 
+        * and encoded in another character (64 encoded) 
+        * the ouput will be a different string
+            * eg: username & password are encoded together in a **base 64**
+        * The result will be added to an autherization header that will be passed along during when the request is made
+
 * 2 - API Key Authorisation
 * 3 - Token Based Authentication  
 
