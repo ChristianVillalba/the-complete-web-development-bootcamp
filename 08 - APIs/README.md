@@ -183,7 +183,7 @@ Instructor: Dr. Angela Yu
 * Check if the client has permission to access that resource.
 * Give back a response depending on whether the client is authorized to make that request.
 
-Authentication: 4 Tiers (Non Offical) 
+#### Authentication: 4 Tiers (Non Offical) 
 * 0 - No Authentication 
     * No changing data that needs to be protected.
     * No data that needs to be assigned to a particular user.
@@ -201,7 +201,7 @@ Authentication: 4 Tiers (Non Offical)
         * and encoded in another character (64 encoded) 
         * the ouput will be a different string
             * eg: username & password are encoded together in a **base 64**
-        * The result will be added to an autherization header that will be passed along during when the request is made
+        * The result will be added to an autherization header that will be passed along when a request is made
 
 * 2 - API Key Authorisation
 * 3 - Token Based Authentication  
