@@ -206,6 +206,45 @@ Instructor: Dr. Angela Yu
 * 2 - API Key Authorisation
 * 3 - Token Based Authentication  
 
+#### Example: Basic Authentication using POSTMAN
+API: https://secrets-api.appbrewery.com/
+* Endpoint: GET /random
+    * Returns a random secret. No authentication is required.
+* Endpoint: GET /all:
+    * Returns all secrets, paginated. Basic authentication is required.
+
+Step in Postman to get access to *endpoint*/all
+* 1 - Register Ourselves:
+    * Use *endpoint*/register
+    * POST request > ✔ Body > ✔ x-www-form-urlencoded
+    * Key(s): username & password
+    * Value(s): *user's personal values*
+    * Send > ✔ Status: 200
+* 2 - Access *endpoint*/all
+    * Use *endpoint*/all?page=1
+    * GET request > ✔ Authorization > ✔ Type: Basic Auth
+    * Use Username & Password registred in the previous step
+    * Send > ✔ Status: 200
+* Postman: Basic Authorization 
+    * GET request > Send > ✔ Status: 200 (Behind the scenes)
+    * Postman will automatically generate the authrization header
+    * The authorization header will be based on the username & password
+    * If we go to ✔ Headers Tab (from Authorization Tab)
+    * Key: *Authorization*
+    * Value: *Basic 5asdfaf4gSDEFHGG00whatever* (This string represents our username+password)
+    * If we copy-paste the string in a BASE64 decoder : It will output our *username:password*
+    * Postman automatically 
+        * Creates the **headers**
+        * **Encodes** the username & password into a **string**
+        * Adds the type of authentication to that string: **basic**
+        * Includes all the output to the header
+* ***Note:*** In most cases, such as using a library like Axios, it'll be able to generate all of that for us just by providing your username and password.
+
+
+
+
+
+
 
 
 
