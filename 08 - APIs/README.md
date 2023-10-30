@@ -195,7 +195,7 @@ Instructor: Dr. Angela Yu
     * Authenticating to the API provider.
     * Using **Username and Password** when you make your API request
     * Usually, authentication is done is by passing over a **base 64 encoded** string in the header of the request.
-    * **Base 64 Encoding:** 
+    * Note: **Base 64 Encoding:** 
         * taking text (ASCII), 
         * coverted it to bits, 
         * and encoded in another character (64 encoded) 
@@ -204,6 +204,17 @@ Instructor: Dr. Angela Yu
         * The result will be added to an autherization header that will be passed along when a request is made
 
 * 2 - API Key Authorisation
+    * **Authentification:** user can be authenticate themselves when registering/loggin in
+    * **Authorisation:** allows (or not) a client to use a server with an **API key** 
+        * If the **API Key** is associated with an **user**
+            * **API key** authorize the user to use the API.
+        * If there is no need to be registered to use the API:
+            * Client get hold of an **PI key** and authorize yourself with the API provider.
+    * A lot of public APIs use API keys
+    * you can then track
+
+the usage per API key.
+
 * 3 - Token Based Authentication  
 
 #### Example: Basic Authentication using POSTMAN
