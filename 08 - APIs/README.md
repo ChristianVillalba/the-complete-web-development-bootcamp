@@ -202,18 +202,21 @@ Instructor: Dr. Angela Yu
         * the ouput will be a different string
             * eg: username & password are encoded together in a **base 64**
         * The result will be added to an autherization header that will be passed along when a request is made
-
 * 2 - API Key Authorisation
-    * **Authentification:** user can be authenticate themselves when registering/loggin in
+    * **Authentification:** user can be authenticate (identify) themselves when registering/loggin in
     * **Authorisation:** allows (or not) a client to use a server with an **API key** 
         * If the **API Key** is associated with an **user**
             * **API key** authorize the user to use the API.
         * If there is no need to be registered to use the API:
             * Client get hold of an **PI key** and authorize yourself with the API provider.
     * A lot of public APIs use API keys
-    * you can then track
-
-the usage per API key.
+        * eg: Google Maps API + Its different APIs 
+    * We can then track the usage per API key.
+    * There's a lot of **costs involved**
+        * It's often that 3rd parties will **charge** for using their APIs
+        * They can determine how much they should charge by looking at how
+        often you're needing to make requests through your API key
+        * This is useful to know both as an API user as well as an API provider
 
 * 3 - Token Based Authentication  
 
