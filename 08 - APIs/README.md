@@ -217,7 +217,10 @@ Instructor: Dr. Angela Yu
         * They can determine how much they should charge by looking at how
         often you're needing to make requests through your API key
         * This is useful to know both as an API user as well as an API provider
-
+    * Note: **API Keys:**
+        * Sometimes the API requires you to add it to the **header** of the request.
+        * Other times it requires you to add it to the **query parameter**.
+        * It depends on the API. Check **documentation**. 
 * 3 - Token Based Authentication  
 
 #### Example: Basic Authentication using POSTMAN
@@ -227,7 +230,7 @@ API: https://secrets-api.appbrewery.com/
 * Endpoint: GET /all:
     * Returns all secrets, paginated. Basic authentication is required.
 
-Step in Postman to get access to *endpoint*/all
+Steps in Postman to get access to *endpoint*/all
 * 1 - Register Ourselves:
     * Use *endpoint*/register
     * POST request > ✔ Body > ✔ x-www-form-urlencoded
@@ -254,8 +257,27 @@ Step in Postman to get access to *endpoint*/all
         * Includes all the output to the header
 * ***Note:*** In most cases, such as using a library like Axios, it'll be able to generate all of that for us just by providing your username and password.
 
+#### Example: API Key Authorisation using POSTMAN
+API: https://secrets-api.appbrewery.com
+* Endpoint: GET /generate-api-key    
+    * To generate an API Key
+* Endpoint: GET /filter?score=1&apiKey=b886c845-9989-43aa-8c60-ea4a669bb587
+    * To Filter the results
+    * It requires an API Key to be accessed
 
-
+Steps in Postman to be able to use *endpoint*/filter
+* 1 - Generate an API Key
+    * Use *endpoint*/generate-api-key
+* 2 - Access *endpoint*/all/filter?score=5&apiKey=b886c845-9989-43aa-8c60-ea4a669bb587
+    * To filter the results, ir requires 2 parameters: 
+    * **score:** The minimum embarrassment score to filter by.
+    * **apiKey:** Your API Key generated from the /generate-api-key endpoint.
+    * In Postman GET *endpoint*/filter
+        * ✔ Params > 
+            * Key : score | value: 1-7
+        * ✔ Authorization > ✔ Type: API Key > 
+            * Key : apiKey | value: *key generated in step 1* | Add to: Query Params
+            * *Note:* "Add to:" ***Header/Query Params*** would depend on the specific documentation
 
 
 
