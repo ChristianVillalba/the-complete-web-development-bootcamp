@@ -222,6 +222,24 @@ Instructor: Dr. Angela Yu
         * Other times it requires you to add it to the **query parameter**.
         * It depends on the API. Check **documentation**. 
 * 3 - Token Based Authentication  
+    * It is even more secure because
+    * The user provides a username and password to log in 
+    * We generate a **token** to be used with the API 
+    * the API doesn't get involved with the username and password
+    * It's the **token** that's constantly being used to **interact with the API**
+    * **OAuth and OAuth 2.0 **is the most common industry **standard** for **token based authentication**
+        * Eg: An app that uses the weathe app and google calendar to warn you to take an umbrella 
+        * OAuth - grant access to the Google Calendar API's data
+            * if we were **not** using token based authentication:
+                * provide the username and password, 
+                * we can use this to interact with the Google calendar API.
+            * using **token based authentication**: 
+                * user to sign in with Google
+                * this **generates a token** for us to get hold of and 
+                * then we can use this token to interact with the Google Calendar API 
+                * all of that security stuff is handled by Google
+                * this is a way more secure way of doing API authentication.
+    * Every time we've asked if we want to authorize a particular app on the behalf of your Google account, we have performed a **token based authentication**
 
 #### Example: Basic Authentication using POSTMAN
 API: https://secrets-api.appbrewery.com/
@@ -279,7 +297,13 @@ Steps in Postman to be able to use *endpoint*/filter
             * Key : apiKey | value: *key generated in step 1* | Add to: Query Params
             * *Note:* "Add to:" ***Header/Query Params*** would depend on the specific documentation
 
+#### Example: Token Based Authentication using POSTMAN
+API: https://secrets-api.appbrewery.com
+* Endpoint: POST /get-auth-token    
+    * Generates an authentication token for a user
 
+
+* 1 - Generate an API Key
 
 
 
