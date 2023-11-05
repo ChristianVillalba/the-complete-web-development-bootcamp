@@ -240,6 +240,9 @@ Instructor: Dr. Angela Yu
                 * all of that security stuff is handled by Google
                 * this is a way more secure way of doing API authentication.
     * Every time we've asked if we want to authorize a particular app on the behalf of your Google account, we have performed a **token based authentication**
+    * This is commonly used when we want to post, change or delete something on behalf of a user.
+        * We would be interacting with a service **as if we were the user**.
+        * **BUT** thanks to user token based authentication, we **never need** to get hold of **username & password**
 
 #### Example: Basic Authentication using POSTMAN
 API: https://secrets-api.appbrewery.com/
@@ -301,10 +304,28 @@ Steps in Postman to be able to use *endpoint*/filter
 API: https://secrets-api.appbrewery.com
 * Endpoint: POST /get-auth-token    
     * Generates an authentication token for a user
+* Endpoint: POST /secrets/***{id}***    
+    * Returns the secret with the specified **ID** .
+    * Bearer token authentication is required.
 
-
-* 1 - Generate an API Key
-
+Steps in Postman to get access to *endpoint*/secrets/{id}
+* 0 - Register an username & password if neccesary 
+    * See exameple: "Basic Authentication using POSTMAN" 
+* 1 - Generates an authentication token for a user
+    * Use *endpoint*/get-auth-token
+    * POST request > ✔ Body > ✔ x-www-form-urlencoded
+    * Key(s): username & password
+    * Value(s): *user's personal values registered* 
+    * Send > ✔ Status: 200
+    * See provided **token** as reponse
+        * eg: { "token": "dd01030a-ea87-4841-95dd-a9d3bc71303d" }
+* 2 - Retrieve secrets by id
+    * Use *endpoint*/secrets/***2*** **(2 = id of the post we want to retrieve)**
+    * In Postman GET *endpoint*/secrets/...
+    * ✔ Authorization > ✔ Type: Bearer Token >
+        * Token: **add token received in previous step**
+    * Send > ✔ Status: 200
+        * Retrives post with `"id": 2`
 
 
 
