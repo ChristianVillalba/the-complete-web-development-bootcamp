@@ -179,9 +179,9 @@ Instructor: Dr. Angela Yu
 * **Authorization** determines their **access rights**
 
 **Protect the resources** behind our API by using authentication &  authorization:
-* We need to identify who is the client making the request.
-* Check if the client has permission to access that resource.
-* Give back a response depending on whether the client is authorized to make that request.
+1. We need to identify who is the client making the request.
+2. Check if the client has permission to access that resource.
+3. Give back a response depending on whether the client is authorized to make that request.
 
 #### Authentication: 4 Tiers (Non Offical) 
 * 0 - No Authentication 
@@ -189,8 +189,8 @@ Instructor: Dr. Angela Yu
     * No data that needs to be assigned to a particular user.
     * It's super inclusive: Anyone can use it.
     * It's super easy to get started
-    * eg: Prevents the abuse of the API by adding a rate limit
-    * eg: 100 requests every 15min. Check the IP and the number of requests  
+        * eg: Prevents the abuse of the API by adding a rate limit
+        * eg: 100 requests every 15min. Check the IP and the number of requests  
 * 1 - Basic Authentication
     * Authenticating to the API provider.
     * Using **Username and Password** when you make your API request
@@ -205,12 +205,18 @@ Instructor: Dr. Angela Yu
 * 2 - API Key Authorisation
     * **Authentification:** user can be authenticate (identify) themselves when registering/loggin in
     * **Authorisation:** allows (or not) a client to use a server with an **API key** 
+    * Assotiation: **API KEY & User**
         * If the **API Key** is associated with an **user**
-            * **API key** authorize the user to use the API.
+            * Users authenticate themselves 
+            * Then, getting an API Key, they authorize themeselves.
         * If there is no need to be registered to use the API:
-            * Client get hold of an **PI key** and authorize yourself with the API provider.
+            * Clients get hold of an **API key** 
+            * Then, authorize themselves with the API provider.
     * A lot of public APIs use API keys
         * eg: Google Maps API + Its different APIs 
+    * **API Key** it is just a **reusable code** to access a API
+        * API keys can be deleted and regenerated
+        * If somebody intercepts this API key, they won't be able to get hold of the username and password
     * We can then track the usage per API key.
     * There's a lot of **costs involved**
         * It's often that 3rd parties will **charge** for using their APIs
@@ -223,12 +229,16 @@ Instructor: Dr. Angela Yu
         * It depends on the API. Check **documentation**. 
 * 3 - Token Based Authentication  
     * It is even more secure because
-    * The user provides a username and password to log in 
+    * User needs a username and password to log in
     * We generate a **token** to be used with the API 
-    * the API doesn't get involved with the username and password
     * It's the **token** that's constantly being used to **interact with the API**
-    * **OAuth and OAuth 2.0 **is the most common industry **standard** for **token based authentication**
-        * Eg: An app that uses the weathe app and google calendar to warn you to take an umbrella 
+        * The API doesn't get involved with the username and password
+    * **OAuth and OAuth 2.0** is the most common industry **standard** for **token based authentication**     
+    * Every time we've asked if we want to authorize a particular app on the behalf of your Google account, we have performed a **token based authentication**
+    * This is commonly used when we want perform an action on behalf of a user (delete, change...)
+        * We would be interacting with a service **as if we were the user**.
+        * **BUT** thanks to user token based authentication, we **never need** to get hold of **username & password**
+    * Eg: An app that uses the weather app and google calendar to warn you to take an umbrella 
         * OAuth - grant access to the Google Calendar API's data
             * if we were **not** using token based authentication:
                 * provide the username and password, 
@@ -239,10 +249,6 @@ Instructor: Dr. Angela Yu
                 * then we can use this token to interact with the Google Calendar API 
                 * all of that security stuff is handled by Google
                 * this is a way more secure way of doing API authentication.
-    * Every time we've asked if we want to authorize a particular app on the behalf of your Google account, we have performed a **token based authentication**
-    * This is commonly used when we want to post, change or delete something on behalf of a user.
-        * We would be interacting with a service **as if we were the user**.
-        * **BUT** thanks to user token based authentication, we **never need** to get hold of **username & password**
 
 #### Example: Basic Authentication using POSTMAN
 API: https://secrets-api.appbrewery.com/
@@ -326,9 +332,6 @@ Steps in Postman to get access to *endpoint*/secrets/{id}
         * Token: **add token received in previous step**
     * Send > ✔ Status: 200
         * Retrives post with `"id": 2`
-
-
-
 
 ## Author
 
