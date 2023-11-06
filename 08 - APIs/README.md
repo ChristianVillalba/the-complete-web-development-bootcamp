@@ -5,6 +5,7 @@ Notes and projects based on:
 Instructor: Dr. Angela Yu 
 
 ## Description: 
+Projects in this module:
 * **01 - JSON**
     * Website that provides recipes to make tacos
     * It shows the title, 3 buttons (ingredients) and the text: "Pick your favourite taco ingredient"
@@ -19,6 +20,14 @@ Instructor: Dr. Angela Yu
     * We can request activities with specific type or number of participants 
     * There are cases where the search will fail and produce and Error
     * We handle the Error by passing a message to the user: "No activities that match your criteria"
+* **03 - API Authentication**
+    * Server side requests using the API: https://secrets-api.appbrewery.com/ 
+        * *Note:* It uses **axios** to make the requests
+        * "No authentication" gives us a random secret 
+        * "Basic authentication" will use the get/all path
+        * "The API key authentication" will get us the filtered endpoint and 
+        * "Bearer token authentication" will get us a secret with a particular ID
+        * These are the authentication examples using Postman but this time the request were made from the server
 
 
 
