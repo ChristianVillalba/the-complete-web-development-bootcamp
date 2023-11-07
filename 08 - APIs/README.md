@@ -262,9 +262,11 @@ Projects in this module:
 #### Example: Basic Authentication using POSTMAN
 API: https://secrets-api.appbrewery.com/
 * Endpoint: GET /random
-    * Returns a random secret. No authentication is required.
+    * Returns a random secret. 
+    * No authentication is required.
 * Endpoint: GET /all:
-    * Returns all secrets, paginated. Basic authentication is required.
+    * Returns all secrets, paginated. 
+    * Basic authentication is required.
 
 Steps in Postman to get access to *endpoint*/all
 * 1 - Register Ourselves:
