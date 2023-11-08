@@ -22,8 +22,8 @@ app.get("/noAuth", async (req, res) => {
   //Hint: make sure you use JSON.stringify to turn the JS object from axios into a string.
   try {
     const response = await axios.get("https://secrets-api.appbrewery.com/random");
-    const content = response.data;
-    res.render("index.ejs", { data: content });
+    const jsObjContent = JSON.stringify(response.data);
+    res.render("index.ejs", { content: jsObjContent });
   } catch (error) {
     console.error("Failed to make request:", error.message);
     res.render("index.ejs", {
@@ -46,8 +46,8 @@ app.get("/basicAuth", async (req, res) => {
     },
     // params: { username }
     });
-    const content = response.data;
-    res.render("index.ejs", { data: content });
+    const jsObjContent = JSON.stringify(response.data);
+    res.render("index.ejs", { content: jsObjContent });
   } catch (error) {
     console.error("Failed to make request:", error.message);
     res.render("index.ejs", {
@@ -61,13 +61,14 @@ app.get("/apiKey", async (req, res) => {
   //Filter for all secrets with an embarassment score of 5 or greater
   //HINT: You need to provide a query parameter of apiKey in the request.
   try {
-    const response = await axios.get("https://secrets-api.appbrewery.com/filter?score=5", {
-      auth: {apiKey: myAPIKey},
-      parameter: { apiKey }
+    const response = await axios.get("https://secrets-api.appbrewery.com/filter", {
+      params: {
+        score: 5,
+        apiKey: myAPIKey,
+      },
       });
-    const content = response.data;
-    res.render("index.ejs", { data: content }
-    );
+      const jsObjContent = JSON.stringify(response.data);
+      res.render("index.ejs", { content: jsObjContent });
   } catch (error) {
     console.error("Failed to make request:", error.message);
     res.render("index.ejs", {
@@ -85,9 +86,8 @@ app.get("/bearerToken", async (req, res) => {
     const response = await axios.get("https://secrets-api.appbrewery.com/secrets/42", {
       headers: {"Authorization" : `Bearer ${ myBearerToken }` }
       });
-    const content = response.data;
-    res.render("index.ejs", { data: content }
-    );
+      const jsObjContent = JSON.stringify(response.data);
+      res.render("index.ejs", { content: jsObjContent });
   } catch (error) {
     console.error("Failed to make request:", error.message);
     res.render("index.ejs", {
