@@ -27,7 +27,20 @@ Projects in this module:
         * "Basic authentication" will use the get/all path
         * "The API key authentication" will get us the filtered endpoint and 
         * "Bearer token authentication" will get us a secret with a particular ID
-        * These are the authentication examples using Postman but this time the request were made from the server
+        * These are the authentication examples using Postman that I alredy practiced       
+        but this time the requests were made from the server
+* **04 - API Authentication**
+    * ***Note:*** Difference Promises
+        * `.get()` > `.then()` > `.then()`
+            * .then will get triggered only when .get gets resolved
+            * .then can be chained to happen in order
+        * `async` > `await` > `axios.get()`
+            * Everyting is inside a func marked as async
+            * Inside of it, the asynchronous process inside the func is marked as await 
+                * "wait until this process is done before continue"
+            * Structures our code as synchronous code
+            * It may be easier to debug
+        * Both methods are documented in the **Axios Documentation**
 
 
 
@@ -343,6 +356,9 @@ Steps in Postman to get access to *endpoint*/secrets/{id}
         * Token: **add token received in previous step**
     * Send > ✔ Status: 200
         * Retrives post with `"id": 2`
+
+### REST APIs
+
 
 ## Author
 
