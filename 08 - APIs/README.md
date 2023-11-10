@@ -30,19 +30,43 @@ Projects in this module:
         * These are the authentication examples using Postman that I alredy practiced       
         but this time the requests were made from the server
 * **04 - REST APIs**
-    * ***Note:*** Difference Promises
-        * `.get()` > `.then()` > `.then()`
-            * .then will get triggered only when .get gets resolved
-            * .then can be chained to happen in order
-        * `async` > `await` > `axios.get()`
-            * Everyting is inside a func marked as async
-            * Inside of it, the asynchronous process inside the func is marked as await 
-                * "wait until this process is done before continue"
-            * Structures our code as synchronous code
-            * It may be easier to debug
-        * Both methods are documented in the **Axios Documentation**
+    * Using the API: https://secrets-api.appbrewery.com/ 
+    * Using GET
+        * We're able to get a **secret** by the **ID** of the secret 
+        * default secrets ids available: 1-50
+    * Using POST: 
+        * To post a new secret
+        * We need to include a secret and a score
+        * We don't need to include an id when creating a new secret
+        * Id will be automatically created in the post route as per the documentation
+    * Using PUT
+        * It changes a secret by making a put request
+        * Remember: with put requests, we have to provide all of the data (id, secret, score).
+    * Using PATCH
+        * It can simply just change one thing (id, secret or score)
+        * No need to have to provide all of the data.
+    * Using DELETE
+        * We're able to delete a **secret** by the **ID** of the secret 
 
+#### How to run the programs
+* Open the terminal
+* Change directory to the lesson we want to review
+* Run the command:
+```
+node index.js
+```
+* Terminal shows a message: "Server is running on port 3000"
+* Open the browser, and go to: http://localhost:3000/
 
+***Note***: Every programm needs their own additional packages
+Check individual project's folder: package-lock.json > packages > dependencies
+Installing the packages
+* Open the terminal
+* Change directory to the folder where we need the packages
+* Run the command:
+```
+npm i myPackage
+```
 
 ## Notes
 
