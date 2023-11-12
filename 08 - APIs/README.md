@@ -22,10 +22,11 @@ Projects in this module:
     * We handle the Error by passing a message to the user: "No activities that match your criteria"
 * **03 - API Authentication**
     * Server side requests using the API: https://secrets-api.appbrewery.com/ 
+    * Website that uses the Secrets API in order to reveal secrets wrote by the users
         * *Note:* It uses **axios** to make the requests
         * "No authentication" gives us a random secret 
         * "Basic authentication" will use the get/all path
-        * "The API key authentication" will get us the filtered endpoint and 
+        * "The API key authentication" will get us the filtered endpoint 
         * "Bearer token authentication" will get us a secret with a particular ID
         * These are the authentication examples using Postman that I alredy practiced       
         but this time the requests were made from the server
@@ -47,6 +48,12 @@ Projects in this module:
         * No need to have to provide all of the data.
     * Using DELETE
         * We're able to delete a **secret** by the **ID** of the secret 
+* **Project - Secrets**
+    *  Final project of the module: 
+        * A secrets project  a client side website that uses the Secrets API in order to reveal random secrets of people anonymously.
+            * No authorization is required.
+
+secrets of people anonymously
 
 #### How to run the programs
 * Open the terminal
@@ -58,8 +65,8 @@ node index.js
 * Terminal shows a message: "Server is running on port 3000"
 * Open the browser, and go to: http://localhost:3000/
 
-***Note***: Every programm needs their own additional packages
-Check individual project's folder: package-lock.json > packages > dependencies
+***Note***: Every programm needs their own additional packages     
+Check individual project's folder: package-lock.json > packages > dependencies      
 Installing the packages
 * Open the terminal
 * Change directory to the folder where we need the packages
