@@ -5,6 +5,9 @@ Notes and projects based on: Building Your Own API
 Instructor: Dr. Angela Yu 
 
 ## Description
+Joke API
+A RESTful API - It serves jokes to anybody that wants to access this API 
+
 
 ## Notes
 
@@ -14,7 +17,7 @@ you can leverage other people's existing data,  services and/or algorithms in or
 It is a really valuable service.
 So that's why people often charge for it
 
-Resource: Rapid API
+***Resource:*** **Rapid API**
 * It collates and allows people to host APIs that customers or clients can consume
 * Rapid API also has free APIs that can be used for developers.
 
@@ -43,21 +46,27 @@ able to work with something else:
     * Not documented, not granteed to be supported
     * In many cases, a private or internal API is something that is not supported for external use...
     * But unless you have security features in place, it doesn't mean that it can't be accessed.
-* REST API: REpresentational State Transfer API
-    * 1️⃣ It uses standard Http methods.
-        * get post put patch and delete
-    * standard data format outup: Json, XML
-        * This is the representation part of the representational state transfer.
-        * Resources are represented in a specific format that is sent in response to the client.
-    * clients and servers in restful APIs are completely separate
-        * Not in the same sytem, not in the same file but able to communicate over a network.
-        * This part of the RESTful architecture allows each side to scale independly
-    * Stateless
-        * Each request from the client to the server should contain all the information (to process the request)
-        * The server shouldn't be storing any sort of client's state or data between the requests
-        * Each request and each response should be completed independenly of what happened previously
-        * Allows better scalability (API) and simplifies the server side implementation.
+* REST APIs
 
+### REST API: REpresentational State Transfer API
+* 1️⃣ It uses standard Http methods.
+    * get post put patch & delete
+* It outups standard data format : Json, XML
+    * This is the **representation** part of the **representational state transfer.**
+    * Resources are represented in a specific format that is sent in response to the client.
+* Clients and servers in restful APIs are **separate**
+    * They are not in the same sytem, not in the same file but still able to communicate over a network.
+    * This part of the RESTful architecture allows each side to scale independly
+* Stateless
+    * Each request from the client to the server should contain all the information to process the request
+    * The server shouldn't be storing any sort of client's state or data between the requests
+    * Each request and each response should be completed independenly of what happened previously
+    * Allows better scalability (API) and simplifies the server side implementation.
+* Resource based
+    * It is centered around resources and uses **a unique resource identifier URI** or **unique resource locator URL**
+<br />
+
+*  The Internet as we know it is considered one of the most successful implementations of Restful architecture 
 
 ### Building My Own API
 
