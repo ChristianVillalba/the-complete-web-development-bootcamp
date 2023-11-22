@@ -5,17 +5,17 @@ Notes and projects based on: Building Your Own API
 Instructor: Dr. Angela Yu 
 
 ## Description
-Joke API
-A RESTful API - It serves jokes to anybody that wants to access this API 
-
+Joke API       
+A RESTful API - It serves jokes to anybody that wants to access this API         
 
 ## Notes
 
 ### APIs
 
-APIs make development so much faster.
-Instead of building out everything from scratch
-you can leverage other people's existing data,  services and/or algorithms in order to build a product on top of that existing API.
+APIs make development so much faster.      
+Instead of building out everything from scratch       
+you can leverage other people's existing data, services and/or algorithms     
+in order to build a product on top of that existing API.
 It is a really valuable service.
 So that's why people often charge for it
 
@@ -52,7 +52,7 @@ So that's why people often charge for it
         * This is the **representation** part of the **representational state transfer.**
         * Resources are represented in a specific format that is sent in response to the client.
     * Clients and servers in restful APIs are **separate**
-        * They are not in the same sytem, not in the same file but still able to communicate over a network.
+        * They are not in the same system, not in the same file but still able to communicate over a network.
         * This part of the RESTful architecture allows each side to scale independly
     * Stateless
         * Each request from the client to the server should contain all the information to process the request
@@ -67,7 +67,10 @@ So that's why people often charge for it
 
 ### Building My Own API
 
-Get Method
+[JokeAPI Documentation - Postman](https://documenter.getpostman.com/view/6048123/2s9XxsTv8Y)
+
+* Get Method
+    * get hold of jokes using our API
 
 ## Author
 

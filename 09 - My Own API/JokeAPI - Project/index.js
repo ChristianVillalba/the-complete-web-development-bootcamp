@@ -8,6 +8,20 @@ const masterKey = "4VGP2DN-6EWM4SJ-N6FGRHV-Z3PR3TT";
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //1. GET a random joke
+app.get("/", async (req, res) => {
+  try {
+      const response = await axios.get("http://localhost:3000/random/");
+      res.render("index.ejs", { 
+          secret: response.data.secret,
+          user: response.data.username, 
+      });
+  } catch (error) {
+    console.error("Failed to make request:", error.message);
+    res.render("index.ejs", {
+      error: error.message,
+    });
+  }
+});
 
 //2. GET a specific joke
 
