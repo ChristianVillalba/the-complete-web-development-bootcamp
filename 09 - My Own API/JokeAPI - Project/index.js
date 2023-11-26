@@ -30,14 +30,35 @@ app.get("/filter", (req, res) => {
 });
 
 //4. POST a new joke
+app.post("/jokes", (req, res) => {
+  const newJoke = {
+ 
+    id: jokes.length + 1,
+    jokeText: req.body.text,
+    jokeType: req.body.type,
+  };
+  jokes.push(newJoke);
+  res.json(newJoke);
+});
 
 //5. PUT a joke
-
+app.put("/jokes/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+  const replacementJoke = {
+    id: id,
+    jokeText: req.body.text,
+    jokeType: req.body.type,
+  };
 //6. PATCH a joke
 
 //7. DELETE Specific joke
 
 //8. DELETE All jokes
+app.delete("/joke/:id", (req, res) => {
+  const searchedId = req.params.id;
+  const foundJoke = jokes.find((joke) => joke.id == id); // or a for loop
+  res.json(foundJoke); 
+});
 
 app.listen(port, () => {
   console.log(`Successfully started server on port ${port}.`);
