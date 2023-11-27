@@ -25,8 +25,7 @@ app.get("/joke/:id", (req, res) => {
 app.get("/filter", (req, res) => {
   const type = req.params.type;
   const foundJokeByType = [];
-  jokes.forEach((joke.type == type) => foundJokeByType.push() );
-  res.json(foundJokeByType); 
+  
 });
 
 //4. POST a new joke
@@ -42,13 +41,7 @@ app.post("/jokes", (req, res) => {
 });
 
 //5. PUT a joke
-app.put("/jokes/:id", (req, res) => {
-  const id = parseInt(req.params.id);
-  const replacementJoke = {
-    id: id,
-    jokeText: req.body.text,
-    jokeType: req.body.type,
-  };
+
 //6. PATCH a joke
 
 //7. DELETE Specific joke
