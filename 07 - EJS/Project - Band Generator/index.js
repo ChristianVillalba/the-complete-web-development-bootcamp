@@ -13,22 +13,18 @@ app.use(express.static("public"));
 //Step 4 - Add a dynamic year to the footer.
 const date = new Date();
 let year = date.getFullYear();
+// after checking the solution, this block would look cleaner in the footer.ejs as an expression inside the template literal:
+// <p>Copyright © <%= new Date().getFullYear() %>
 
 //Hint: Google to find out how to get the current year using JS.
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.render("index.ejs"); 
+  res.render("index.ejs", {
+    year: year,
+  }); 
 });
-
-app.post("/submit", (req, res) => {
-  // const numLetters = req.body["fName"].length + req.body["lName"].length;
-  res.render("index.ejs", { 
-    // numberOfLetters: numLetters, 
-  });
-});
-
 
 app.post("/submit", (req, res) => {
   //Step 2 - Make the generate name functionality work
@@ -38,6 +34,13 @@ app.post("/submit", (req, res) => {
   //scroll down to see the two arrays.
   //2. Send the index.ejs as a response and add the adjective and noun to the res.render
   //3. Test to make sure that the random words display in the h1 element in index.ejs
+  const randomAdj = adj[Math.floor(Math.random() * adj.length)];
+  const randomNoun = noun[Math.floor(Math.random() * noun.length)];
+  const generatedBandName = `${randomAdj} ${randomNoun}` ;  
+  res.render("index.ejs", { 
+    bandName: generatedBandName, 
+    year: year,
+  });
 });
 
 app.listen(port, () => {
