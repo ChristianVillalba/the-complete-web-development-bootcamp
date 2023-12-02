@@ -8,21 +8,60 @@ const masterKey = "4VGP2DN-6EWM4SJ-N6FGRHV-Z3PR3TT";
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //1. GET a random joke
+app.get("/random", (req,res) => { 
+  const randomIndex = Math.floor(Math.random() * jokes.length());
+  const randomJoke = jokes[randomIndex];
+  res.json(randomJoke)
+})
 
 //2. GET a specific joke
+app.get("/jokes/:id", (req,res) => {
+  const id = parseInt(req.params.id);
+  const jokeById = joke.find( (joke) => joke.id === id);
+  res.json();
+})
 
 //3. GET a jokes by filtering on the joke type
+app.get("/filter", (req,res) => { 
+  const type = req.body.type;
+  const filteredJokes = joke.filter( (joke) => joke.type === type);
+  res.json(filteredJokes)
+})
 
 //4. POST a new joke
-
+app.post("/jokes", (req,res) => { 
+  const newJoke = {
+    id: jokes.length + 1,
+    jokeText: req.body.text,
+    jokeType: req.body.type,
+  };
+  jokes.push(newJoke);
+  res.json(newJoke);
+  console.log(jokes.slice(-1))
+})
 
 //5. PUT a joke
+app.put("/jokes/:id", (req,res) => { 
+  const id = parseInt(req.params.id)
+  res.json()
+})
 
 //6. PATCH a joke
+app.patch("/jokes/:id", (req,res) => { 
+  const id = parseInt(req.params.id)
+  res.json()
+})
 
 //7. DELETE Specific joke
+app.delete("/jokes/:id", (req,res) => { 
+  const id = parseInt(req.params.id)
+  res.json()
+})
 
 //8. DELETE All jokes
+app.delete("/all", (req,res) => { 
+  res.json()
+})
 
 
 app.listen(port, () => { 
