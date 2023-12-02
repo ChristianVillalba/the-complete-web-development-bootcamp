@@ -8,31 +8,10 @@ const masterKey = "4VGP2DN-6EWM4SJ-N6FGRHV-Z3PR3TT";
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //1. GET a random joke
-app.get( "/random", (req, res) => {
-  let randomIndex =  Math.floor(Math.random() * jokes.length);
-  res.json(jokes[randomIndex]);
-});
 
 //2. GET a specific joke
-app.get( "/:id", (req, res) => {
-  const id = parseInt(req.params.id);
-  const jokeById = jokes.find((joke) => joke.id === id);
-  res.json(jokeById);
-});
 
 //3. GET a jokes by filtering on the joke type
-app.get( "/filter", (req, res) => {
-  emptyList = []
-  for i in joke 
-    if joke.type === type
-      jokeList.push(item)
-    else
-      continue
-  res.json(prevEmptyList)
-  
-
-  res.json();
-});
 
 //4. POST a new joke
 
@@ -44,13 +23,9 @@ app.get( "/filter", (req, res) => {
 //7. DELETE Specific joke
 
 //8. DELETE All jokes
-app.delete("/joke/:id", (req, res) => {
-  const searchedId = req.params.id;
-  const foundJoke = jokes.find((joke) => joke.id == id); // or a for loop
-  res.json(foundJoke); 
-});
 
-app.listen(port, () => {
+
+app.listen(port, () => { 
   console.log(`Successfully started server on port ${port}.`);
 });
 
