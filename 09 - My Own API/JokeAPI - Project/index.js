@@ -18,7 +18,7 @@ app.get("/random", (req,res) => {
 app.get("/jokes/:id", (req,res) => {
   const id = parseInt(req.params.id);
   const jokeById = joke.find( (joke) => joke.id === id);
-  res.json();
+  res.json(jokeById);
 })
 
 //3. GET a jokes by filtering on the joke type
@@ -42,27 +42,54 @@ app.post("/jokes", (req,res) => {
 
 //5. PUT a joke
 app.put("/jokes/:id", (req,res) => { 
-  const id = parseInt(req.params.id)
-  res.json()
+  const id = parseInt(req.params.id);
+  const searchIndex = jokes.findIndex((joke) => joke.id === id);
+  const replacementJoke = {
+    id: id,
+    jokeText: req.body.text,
+    jokeType: req.body.text,
+  }
+  jokes[searchIndex] = replacementJoke ; 
+  res.json(replacementJoke)
 })
 
 //6. PATCH a joke
 app.patch("/jokes/:id", (req,res) => { 
-  const id = parseInt(req.params.id)
-  res.json()
+  const id = parseInt(req.params.id);
+  const jokeToBeUpdated = jokes.find((joke) => joke.id === id);
+  const replacementJoke = {
+    id: id,
+    jokeText: req.body.text || jokeToBeUpdated.text,
+    jokeType: req.body.text || jokeToBeUpdated.type,
+  }
+  jokes[searchIndex] = replacementJoke ;
+  res.json(replacementJoke)
 })
 
 //7. DELETE Specific joke
 app.delete("/jokes/:id", (req,res) => { 
-  const id = parseInt(req.params.id)
-  res.json()
+  const id = parseInt(req.params.id);
+  const searchIndex = jokes.findIndex((joke) => joke.id === id);
+  if (searchIndex > -1) {
+    jokes.splice(searchIndex, 1); 
+    res.sendStatus(200);
+  } else {
+    res.status(404).json({error: `Joke with id: ${id} not found. No jokes were deleted.`})
+  }
 })
 
 //8. DELETE All jokes
-app.delete("/all", (req,res) => { 
-  res.json()
-})
-
+app.delete("/all", (req, res) => {
+  const userKey = req.query.key;
+  if (userKey === masterKey) {
+    jokes = [];
+    res.sendStatus(200);
+  } else {
+    res
+      .status(404)
+      .json({ error: `You are not authorised to perform this action.` });
+  }
+});
 
 app.listen(port, () => { 
   console.log(`Successfully started server on port ${port}.`);
