@@ -23,9 +23,9 @@ app.get("/jokes/:id", (req,res) => {
 
 //3. GET a jokes by filtering on the joke type
 app.get("/filter", (req,res) => { 
-  const type = req.body.type;
-  const filteredJokes = jokes.filter( (joke) => joke.type === type);
-  res.json(filteredJokes)
+  const type = req.query.type;
+  const filteredJokees = jokes.filter((joke) => joke.jokeType === type);
+  res.json(filteredJokees);
 })
 
 //4. POST a new joke
@@ -37,18 +37,18 @@ app.post("/jokes", (req,res) => {
   };
   jokes.push(newJoke);
   res.json(newJoke);
-  console.log(jokes.slice(-1))
+  console.log(newJoke)
 })
 
 //5. PUT a joke
 app.put("/jokes/:id", (req,res) => { 
   const id = parseInt(req.params.id);
-  const searchIndex = jokes.findIndex((joke) => joke.id === id);
   const replacementJoke = {
     id: id,
     jokeText: req.body.text,
-    jokeType: req.body.text,
+    jokeType: req.body.type,
   }
+  const searchIndex = jokes.findIndex((joke) => joke.id === id);
   jokes[searchIndex] = replacementJoke ; 
   res.json(replacementJoke)
 })
@@ -59,9 +59,10 @@ app.patch("/jokes/:id", (req,res) => {
   const jokeToBeUpdated = jokes.find((joke) => joke.id === id);
   const replacementJoke = {
     id: id,
-    jokeText: req.body.text || jokeToBeUpdated.text,
-    jokeType: req.body.text || jokeToBeUpdated.type,
-  }
+    jokeText: req.body.text || jokeToBeUpdated.jokeText,
+    jokeType: req.body.type || jokeToBeUpdated.jokeType,
+  };
+  const searchIndex = jokes.findIndex((joke) => joke.id === id);
   jokes[searchIndex] = replacementJoke ;
   res.json(replacementJoke)
 })
