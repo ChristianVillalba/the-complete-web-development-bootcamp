@@ -43,7 +43,7 @@ app.use(express.static("public"));
 //Write your code here//
 
 //CHALLENGE 1: GET All posts
-app.get("/all", async (req, res) => {
+app.get("/posts", async (req, res) => {
   try {
     const response = await axios.get("URL/all");
     const result = response.data;
@@ -56,7 +56,7 @@ app.get("/all", async (req, res) => {
   }
 });
 //CHALLENGE 2: GET a specific post by id
-app.get("/:id", async (req, res) => {
+app.get("/posts/:id", async (req, res) => {
   try {
 
     const id = parseInt(req.params.id);
@@ -82,7 +82,7 @@ app.post("/posts", (req,res) => {
     title: req.body.title ,
     content: req.body.content ,
     author: req.body.author ,
-    date: req.body.date ,
+    date: new Date(),
   };
   posts.push(newPost);
   res.json(newPost);
@@ -112,7 +112,7 @@ app.delete("/posts/:id", (req,res) => {
   const searchIndex = posts.findIndex((post) => post.id === id);
   if (searchIndex > -1) {
     posts.splice(searchIndex, 1); 
-    res.sendStatus(200);
+    res.json({ message: "Post deleted" });
   } else {
     res.status(404).json({error: `Post with id: ${id} not found. No posts were deleted.`})
   }
