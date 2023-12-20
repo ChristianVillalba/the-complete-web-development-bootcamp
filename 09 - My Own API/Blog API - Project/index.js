@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import axios from "axios";
 
 const app = express();
+// Server that handles the api request
 const port = 4000;
 
 // In-memory data store
@@ -33,7 +34,7 @@ let posts = [
   },
 ];
 
-let lastId = 3;
+let nextId = posts.length + 1;
 
 // Middleware
 app.use(bodyParser.json());
@@ -43,42 +44,24 @@ app.use(express.static("public"));
 //Write your code here//
 
 //CHALLENGE 1: GET All posts
-app.get("/posts", async (req, res) => {
-  try {
-    const response = await axios.get("URL/all");
-    const result = response.data;
-    res.render("index.ejs", { data: result });
-  } catch (error) {
-    console.error("Failed to make request:", error.message);
-    res.render("index.ejs", {
-      error: error.message,
-    });
-  }
+app.get("/posts", (req, res) => {
+  console.log(posts);
+  res.json(posts);
 });
+
 //CHALLENGE 2: GET a specific post by id
-app.get("/posts/:id", async (req, res) => {
-  try {
-
-    const id = parseInt(req.params.id);
-    // const postById = posts.find( (post) => post.id === id);
-
-    // const response = await axios.get("URL/:id");
-    const postById = await axios.get(posts.find( (post) => post.id === id) );
-    const result = postById.data;
-    
-    res.render("index.ejs", { data: result });
-  } catch (error) {
-    console.error("Failed to make request:", error.message);
-    res.render("index.ejs", {
-      error: error.message,
-    });
-  }
+app.get("/posts/:id", (req, res) => {
+  const post = posts.find((p) => p.id === parseInt(req.params.id));
+  // If we the post is not found
+  if (!post) return res.status(404).json({ message: "Post not found" });
+  res.json(post);
 });
+
 
 //CHALLENGE 3: POST a new post
 app.post("/posts", (req,res) => { 
   const newPost = {
-    id: posts.length + 1,  
+    id: nextId + 1,  
     title: req.body.title ,
     content: req.body.content ,
     author: req.body.author ,
