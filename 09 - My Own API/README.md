@@ -6,7 +6,10 @@ Instructor: Dr. Angela Yu
 
 ## Description
 Joke API       
-A RESTful API - It serves jokes to anybody that wants to access this API         
+    * A RESTful API - It serves jokes to anybody that wants to access this API    
+Blog API
+    * Creates a blog website 
+    * The posts can be created, retrived, edited and deleted
 
 ## Notes
 
