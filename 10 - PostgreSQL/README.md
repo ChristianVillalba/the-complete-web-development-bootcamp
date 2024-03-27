@@ -13,35 +13,48 @@ Instructor: Dr. Angela Yu
 
 Open Source Relational Database Management System (RDBMS).     
 * Postgres is one of the top most used database management systems 
-* Open Source 
+* Free & Open Source 
 * Great Community Support
-
 * The code that's required to use Postgres is also incredibly simple
-* There are special packages set up to use Postgres with node
-* Requires [**node-postgres** package](https://www.npmjs.com/package/pg)
+    * There are special **packages** set up to use **Postgres** with **Node**
+    * Requires [**node-postgres** package](https://www.npmjs.com/package/pg)
     * `npm install pg`
-```javascript
-    import Client from "pg"; // from the postgree package. Allows db. queries
-    const db = new Client({
-        user: "username",
-        host: "localhost",
-        database: "mydatabase",
-        password: "password",
-        port: 1234,
-    });
-    db.connect(); // starts database connection
-    // SQL code & Error Handling 
-    db.query("SELECT * FROM users", (err, res) => {
-        if (err) {
-            console.error("Error executing query", err.stack);
-        } else {
-            console.log("User data:", res.rows); // if there is no errors, output all the (users) rows
-        }
-    db.end(); // ends database connection
-    });
-```
+        ```javascript
+            // You can imagine the Postgres database as a server of its own 
+            import Client from "pg"; // from the postgree package. Allows db. queries
 
-### APIs
+            // The first: create a const called db, and this contains all of the details to connect to our PostgresDB.
+            const db = new Client({
+                user: "username",
+                host: "localhost",
+                database: "mydatabase",
+                password: "password",
+                port: 1234,
+            });
+
+            db.connect(); // starts database connection
+
+            // SQL code & Error Handling 
+            db.query("SELECT * FROM users", (err, res) => {
+                if (err) {
+                    console.error("Error executing query", err.stack);
+                } else {
+                    console.log("User data:", res.rows); // if there is no errors, output all the (users) rows
+                }
+            db.end(); // ends database connection
+            });
+        ```
+
+### Requirements to use Postgree
+* Postgres Server
+    * To use Postgrees in our local computer
+    * Not necessary for remote server
+* pgAdmin
+    * UI to tap into our Postgres Server (instead of command line)
+
+###  Use pgAdmin to CREATE a TABLE
+.csv comma separated vales
+
 
 ## Author
 
