@@ -54,6 +54,32 @@ Open Source Relational Database Management System (RDBMS).
 
 ###  Use pgAdmin to CREATE a TABLE
 .csv comma separated vales
+* First line: header
+* Next lines: data
+
+* Creating a Table: pgAdmin (4)
+    * Open pgAdmin (may require a password - the one we created when installed pgAdmin)
+    * Servers > Databases (right click) > create > Database...
+    * Database (MyName) + Owner (postgrees - default) + Comment (optional)
+        * Check: *Database Name* > Schemas > public > **Tables (empty)**
+    * Selecting our created Database > ▤ query tool 
+    * Query:
+        ```sql
+        CREATE TABLE capitals (
+            id SERIAL PRIMARY KEY, /* all the id's are unique */ 
+            country VARCHAR (64),  /* (x) limits the num of char */ 
+            capital VARCHAR (64)
+        );                         /* dont forget the ; */ 
+            ```
+    * ▶ (Execute/Refresh)
+        * "CREATE TABLE Query returned successfully in 74 msec."
+        * Check: *Database Name* > Schemas > public > **Tables (1) > capitals**
+        * Check: capitals (right click) > > View/ Edit Data > All rows (HEADER created, emtpy rows)
+        * Query (done by pgAdmin): 
+            ```sql
+            SELECT * FROM public.capitals
+            ORDER BY id ASC                      
+                ```
 
 
 ## Author
