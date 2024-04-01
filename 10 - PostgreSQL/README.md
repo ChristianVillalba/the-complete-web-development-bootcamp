@@ -57,7 +57,7 @@ Open Source Relational Database Management System (RDBMS).
 * First line: header
 * Next lines: data
 
-* Creating a Table: pgAdmin (4)
+* **Creating** a Table: pgAdmin (4)
     * Open pgAdmin (may require a password - the one we created when installed pgAdmin)
     * Servers > Databases (right click) > create > Database...
     * Database (MyName) + Owner (postgrees - default) + Comment (optional)
@@ -73,13 +73,21 @@ Open Source Relational Database Management System (RDBMS).
             ```
     * ▶ (Execute/Refresh)
         * "CREATE TABLE Query returned successfully in 74 msec."
-        * Check: *Database Name* > Schemas > public > **Tables (1) > capitals**
+        * Check: *Database Name* > Schemas > public > Tables (1) > **capitals**
         * Check: capitals (right click) > > View/ Edit Data > All rows (HEADER created, emtpy rows)
         * Query (done by pgAdmin): 
             ```sql
             SELECT * FROM public.capitals
             ORDER BY id ASC                      
                 ```
+* **Importing** data to our table:
+    * Importing ***capitals.csv*** into the table ***capitals*** we just created using pgAdmin
+        * Location Reminder: *Database Name* > Schemas > public > Tables (1) > **capitals**
+    * Right click on table: **capitals** > Import/Export Data > ( ✓ Import)
+    
+
+
+
 
 
 ## Author
