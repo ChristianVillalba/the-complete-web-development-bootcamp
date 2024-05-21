@@ -53,11 +53,11 @@ Open Source Relational Database Management System (RDBMS).
     * UI to tap into our Postgres Server (instead of command line)
 
 ###  Use pgAdmin to CREATE a TABLE
-.csv comma separated vales
+**.csv file** : comma separated vales
 * First line: header
 * Next lines: data
 
-* **Creating** a Table: pgAdmin (4)
+* **Creating** a Table: pgAdmin (v4)
     * Open pgAdmin (may require a password - the one we created when installed pgAdmin)
     * Servers > Databases (right click) > create > Database...
     * Database (MyName) + Owner (postgrees - default) + Comment (optional)
