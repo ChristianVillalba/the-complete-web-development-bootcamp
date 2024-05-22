@@ -83,7 +83,24 @@ Open Source Relational Database Management System (RDBMS).
 * **Importing** data to our table:
     * Importing ***capitals.csv*** into the table ***capitals*** we just created using pgAdmin
         * Location Reminder: *Database Name* > Schemas > public > Tables (1) > **capitals**
-    * Right click on table: **capitals** > Import/Export Data > ( ✓ Import)
+    * Right click on table: **capitals** > Import/Export Data >> Import/Export Window:
+        * General Tab: 
+            * ( ✓ Import)  
+            * Select Filename (Open)
+            * Format: csv
+        * Options: 
+            * Header ( ✓ ) *Confirms that the first data is the header, not data.*
+        * Coulumns
+            * Check: The names have been auto imported (id, country, capital)
+            * ⚠️ The names of the fields in the table we created, must exact match the header of what are going to import.
+    * In case we need to reedit fields in the table we created:
+        * Tables> **capitals** > Right click > properties > Columns > *edit* > Save
+        * Ready to be imported agian.
+        
+
+
+        
+
     
 
 
