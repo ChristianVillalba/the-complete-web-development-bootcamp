@@ -52,7 +52,7 @@ Open Source Relational Database Management System (RDBMS).
 * pgAdmin
     * UI to tap into our Postgres Server (instead of command line)
 
-###  Use pgAdmin to CREATE a TABLE
+### Use pgAdmin to CREATE a TABLE
 **.csv file** : comma separated vales
 * First line: header
 * Next lines: data
@@ -97,7 +97,7 @@ Open Source Relational Database Management System (RDBMS).
         * Tables> **capitals** > Right click > properties > Columns > *edit* > Save
         * Ready to be imported agian.
         
-
+### READ data from a Postgres database
 
         
 
