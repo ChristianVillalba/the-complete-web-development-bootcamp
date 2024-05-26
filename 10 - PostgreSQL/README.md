@@ -99,7 +99,37 @@ Open Source Relational Database Management System (RDBMS).
         
 ### READ data from a Postgres database
 
-        
+* Project Exercise: WorldCapitalQuiz
+* `Select * FROM nameOfTable`
+    * to read from our SQL database...
+    * But in order to implement it in our Node and Express backend:
+```sql
+import pg from "pg";
+
+const db= new pg.Client({
+    user: "postgrees",
+    host: "y0uRp@$Sw0r1D",
+    database: "world",
+    password: "123456",
+    port: 5432,
+});
+
+db.connect();
+
+//sql
+db.query(Select * FROM nameOfTable, (err,res) => {
+    if (err) {
+        console.error("Error executing query", err.stack);
+    } else {
+        quiz = res.rows;
+    }
+
+    db.end();
+});
+```
+* We are going to create a WorldCapitalQuiz
+* *Note: navigate to the file path and to install all the Node modules:* `npm i`
+
 
     
 
