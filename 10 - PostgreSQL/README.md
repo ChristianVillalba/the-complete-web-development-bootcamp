@@ -111,7 +111,7 @@ const db= new pg.Client({
     host: "y0uRp@$Sw0r1D",
     database: "world",
     password: "123456",
-    port: 5432,
+    port: 5432,   // Default postgrees port
 });
 
 db.connect();
