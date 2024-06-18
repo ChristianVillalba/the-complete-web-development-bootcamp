@@ -68,7 +68,7 @@ Open Source Relational Database Management System (RDBMS).
         CREATE TABLE capitals (
             id SERIAL PRIMARY KEY, /* all the id's are unique */ 
             country VARCHAR (64),  /* (x) limits the num of char */ 
-            capital VARCHAR (64)
+            capital VARCHAR (64)   /* No , after the final column  */ 
         );                         /* dont forget the ; */ 
             ```
     * ▶ (Execute/Refresh)
@@ -93,6 +93,10 @@ Open Source Relational Database Management System (RDBMS).
         * Coulumns
             * Check: The names have been auto imported (id, country, capital)
             * ⚠️ The names of the fields in the table we created, must exact match the header of what are going to import.
+            * Eg: Imported data has no id
+                * If our table has more columns that the data we are going to import:
+                    * Delete/PressCross we're relying on Postgres to autogenerate it
+                    * We rely on Postgres to autogenerate it
     * In case we need to reedit fields in the table we created:
         * Tables> **capitals** > Right click > properties > Columns > *edit* > Save
         * Ready to be imported agian.
@@ -100,38 +104,59 @@ Open Source Relational Database Management System (RDBMS).
 ### READ data from a Postgres database
 
 * Project Exercise: WorldCapitalQuiz
+    * *Note: navigate to the file path and to install all the Node modules:* `npm i`
+    * *Note: navigate to the file path and to install pg package:* `npm i pg`
 * `Select * FROM nameOfTable`
     * to read from our SQL database...
     * But in order to implement it in our Node and Express backend:
 ```sql
+-- Import module
 import pg from "pg";
 
+-- Define a new client and configure it
 const db= new pg.Client({
     user: "postgrees",
-    host: "y0uRp@$Sw0r1D",
+    host: "localhost",
     database: "world",
-    password: "123456",
+    password: "y0uRp@$Sw0r1D",
     port: 5432,   // Default postgrees port
 });
 
+-- Starts the connection defined above
 db.connect();
 
-//sql
-db.query(Select * FROM nameOfTable, (err,res) => {
+-- sql
+db.query("Select * FROM nameOfTable", (err,res) => {
     if (err) {
         console.error("Error executing query", err.stack);
     } else {
         quiz = res.rows;
     }
-
     db.end();
 });
 ```
-* We are going to create a WorldCapitalQuiz
-* *Note: navigate to the file path and to install all the Node modules:* `npm i`
 
-
+### Query data using SELECT, WHERE, and LIKE
     
+* Now that we've added our data into a database and created that new table, 
+* Select table > QueryTool 
+* `SELECT` **to select or query values** from the table.
+    * `SELECT * FROM nameOfTable`
+        * Select all
+    * `SELECT this_column FROM this_table`
+    * `SELECT one_column, other_column FROM this_table`
+* `WHERE` to provide some **conditions** to check against before we pull up our data
+    * Single quotes `'` to represent string
+    * `SELECT rice_production FROM world_food WHERE country = 'United States'`  
+    * `SELECT country FROM world_food WHERE wheat_production < 20`
+* `WHERE LIKE` to match only a specific part of our data
+    * `SELECT this_column FROM this_table WHERE this_column LIKE pattern`
+        * `%` to represent "Any Value"
+        * `||` merge patterns
+    * `SELECT country FROM world_food WHERE country LIKE 'U' || '%'` 
+        * Starts with "U" + "Any Value" = Ukranie, United States
+    * `SELECT country FROM world_food WHERE country LIKE '%' || 'a'`
+        * Starts with "Any Value" + ends with "a" = Australia, China, Ethiopia, India
 
 
 
