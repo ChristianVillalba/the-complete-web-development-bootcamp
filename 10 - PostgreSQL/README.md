@@ -153,11 +153,12 @@ db.query("Select * FROM nameOfTable", (err,res) => {
     * `SELECT this_column FROM this_table WHERE this_column LIKE pattern`
         * `%` to represent "Any Value"
         * `||` merge patterns
-    * `SELECT country FROM world_food WHERE country LIKE 'U' || '%'` 
+    * `SELECT country FROM world_food WHERE country LIKE 'U' || '%'` // or U%
         * Starts with "U" + "Any Value" = Ukranie, United States
-    * `SELECT country FROM world_food WHERE country LIKE '%' || 'a'`
+    * `SELECT country FROM world_food WHERE country LIKE '%' || 'a'` // or %a
         * Starts with "Any Value" + ends with "a" = Australia, China, Ethiopia, India
 
+### UNIQUE & NOT NULL
 
 
 
