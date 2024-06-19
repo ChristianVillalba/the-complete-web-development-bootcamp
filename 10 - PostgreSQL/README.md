@@ -158,10 +158,51 @@ db.query("Select * FROM nameOfTable", (err,res) => {
     * `SELECT country FROM world_food WHERE country LIKE '%' || 'a'` // or %a
         * Starts with "Any Value" + ends with "a" = Australia, China, Ethiopia, India
 
-### UNIQUE & NOT NULL
+### NOT NULL & UNIQUE 
+* `NOT NULL` 
+    * Missing or empty values are not allowed
+    * Attemps to add NULL will produce an ERROR
+* `NOT NULL`
+    * Value con not be repeated in the table.
+    * No other value stgored can be the same (avoid duplicates).       
+       
+```sql
+CREATE TABLE visited_countries(
+	id SERIAL PRIMARY KEY,
+	country_code CHAR(2) NOT NULL UNIQUE,  
+);
+```
 
+***NOTE: TravelTracker Project***
+```js
+/// index.ejs
+<script>
+const country_codes = "<%= countries %>".split(",") 
+console.log(typeof ("<%= countries %>"))
+country_codes.forEach(code => {
+    document.getElementById(code).style.fill = 'teal'
+});
+</script>
+```
+* `"<%= countries %>".split(",")`
+* `.split(",")` why to use it:
+    * EJS does templating: inserting a template string.
+    * We're getting a string here and not a JS code, or JS array as we would expect.
+    * we're treating it as a string, we split the string using `,` because arrays are formatted with `,`
+            
+```js
+app.get("/", async (req, res) => {
+  const result = await db.query("SELECT country_code FROM visited_countries");
+  let countries = [];
+  result.rows.forEach((country) => {
+    countries.push(country.country_code);
+  });
+  console.log(result.rows);
+  res.render("index.ejs", { countries: countries, total: countries.length });
+  db.end();
+});
 
-
+```
 
 ## Author
 
