@@ -192,13 +192,17 @@ country_codes.forEach(code => {
             
 ```js
 app.get("/", async (req, res) => {
+  // query for the places we visited. Its a query
   const result = await db.query("SELECT country_code FROM visited_countries");
+  // the result of the query is an array with JS Objects. we will use a forEach loop to access them
   let countries = [];
   result.rows.forEach((country) => {
+    // access every value returned for the query and push it to the empty array: countries
     countries.push(country.country_code);
   });
-  console.log(result.rows);
+  console.log(result.rows); // not neccessary but useful to check how the strucure of the data looks like
   res.render("index.ejs", { countries: countries, total: countries.length });
+  // close the connecton to the database
   db.end();
 });
 
