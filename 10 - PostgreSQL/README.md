@@ -205,8 +205,10 @@ app.get("/", async (req, res) => {
   // close the connecton to the database
   db.end();
 });
-
 ```
+
+### INSERT & Add Data
+
 
 ## Author
 
