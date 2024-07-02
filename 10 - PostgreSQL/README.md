@@ -209,6 +209,10 @@ app.get("/", async (req, res) => {
 
 ### INSERT & Add Data
 
+```
+INSERT INTO tableName (column1, column2, column3)
+VALUES (value1, value2)
+```
 
 ## Author
 
