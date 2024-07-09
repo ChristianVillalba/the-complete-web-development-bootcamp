@@ -175,7 +175,7 @@ CREATE TABLE visited_countries(
 
 ***NOTE: TravelTracker Project***
 ```js
-/// index.ejs
+// index.ejs
 <script>
 const country_codes = "<%= countries %>".split(",") 
 console.log(typeof ("<%= countries %>"))
@@ -192,24 +192,26 @@ country_codes.forEach(code => {
             
 ```js
 app.get("/", async (req, res) => {
+
   // query for the places we visited. Its a query
   const result = await db.query("SELECT country_code FROM visited_countries");
+
+  let countries = []; 
+
   // the result of the query is an array with JS Objects. we will use a forEach loop to access them
-  let countries = [];
   result.rows.forEach((country) => {
-    // access every value returned for the query and push it to the empty array: countries
     countries.push(country.country_code);
-  });
+  });     // access every value returned for the query and push it to the empty array: countries
   console.log(result.rows); // not neccessary but useful to check how the strucure of the data looks like
   res.render("index.ejs", { countries: countries, total: countries.length });
-  // close the connecton to the database
-  db.end();
+  
+  db.end();    // close the connecton to the database
 });
 ```
 
 ### INSERT & Add Data
 
-```
+```sql
 INSERT INTO tableName (column1, column2, column3)
 VALUES (value1, value2)
 ```
