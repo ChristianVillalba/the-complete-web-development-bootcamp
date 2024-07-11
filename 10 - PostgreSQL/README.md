@@ -41,7 +41,7 @@ Open Source Relational Database Management System (RDBMS).
                 } else {
                     console.log("User data:", res.rows); // if there is no errors, output all the (users) rows
                 }
-            db.end(); // ends database connection
+                db.end(); // ends database connection
             });
         ```
 
@@ -215,6 +215,12 @@ app.get("/", async (req, res) => {
 INSERT INTO tableName (column1, column2, column3)
 VALUES (value1, value2)
 ```
+
+Task:
+- Create new Table: countries. 
+    - inside world db
+- id , country_code, country_name
+- import countries.csv
 
 
 
