@@ -216,11 +216,15 @@ INSERT INTO tableName (column1, column2, column3)
 VALUES (value1, value2)
 ```
 
-Task:
-- Create new Table: countries. 
-    - inside world db
-- id , country_code, country_name
-- import countries.csv
+***Note:***
+When we write SQL queries and we use the INSERT INTO command, this is how we insert values.
+And the reason is because our values are hard coded, we already know what the values should be.
+
+But when we do this in our Node back-end, we're going to be using db.query() 
+    * That comes from the pg NPM package.
+    * It allows us to insert two parameters:
+        * SQL command
+        * Any values that we want to insert into the SQL command.
 
 
 
