@@ -211,22 +211,43 @@ app.get("/", async (req, res) => {
 
 ### INSERT & Add Data
 
+SQL 
 ```sql
 INSERT INTO tableName (column1, column2, column3)
 VALUES (value1, value2)
+-- example
+INSERT INTO world_food (country, rice_production, wheat_production)
+VALUES ('Italy', 1.34, 5.3)
 ```
+When we write SQL queries and we use the INSERT INTO command, this is how we insert values.     
+And the reason is because our values are hard coded, we already know what the values should be.     
+        
+                
 
-***Note:***
-When we write SQL queries and we use the INSERT INTO command, this is how we insert values.
-And the reason is because our values are hard coded, we already know what the values should be.
-
+Javascript      
+```javascript
+db.query(INSERT INTO tableName (column1, column2, column3)
+VALUES (value1, value2))
+// example
+db.query(
+"INSERT INTO world_food (country, rice_production, wheat_production)
+VALUES ($1, $2, $3)",
+['Italy', 1.34, 5.3]
+);
+```
 But when we do this in our Node back-end, we're going to be using db.query() 
-    * That comes from the pg NPM package.
-    * It allows us to insert two parameters:
-        * SQL command
-        * Any values that we want to insert into the SQL command.
+* That comes from the pg NPM package.
+* It allows us to insert two parameters:
+    * SQL command
+    * Any values that we want to insert into the SQL command.
+* This allows us to do is to insert not just hard-coded values but also variables, constants, or expressions
+* We achieve this by:
+    * In the query: `"queryBetweenDoubleQuotes"`
 
-
+    
+    adding placehoders `$1, $2, $3`
+        * inside the query 
+    * Then we add an array after the query 
 
 ## Author
 
