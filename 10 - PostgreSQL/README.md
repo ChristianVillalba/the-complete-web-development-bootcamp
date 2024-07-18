@@ -242,12 +242,10 @@ But when we do this in our Node back-end, we're going to be using db.query()
     * Any values that we want to insert into the SQL command.
 * This allows us to do is to insert not just hard-coded values but also variables, constants, or expressions
 * We achieve this by:
-    * In the query: `"queryBetweenDoubleQuotes"`
-
-    
-    adding placehoders `$1, $2, $3`
-        * inside the query 
-    * Then we add an array after the query 
+    * Inside the query: `"queryBetweenDoubleQuotes"`
+    * we add placehoders `$1, $2, $3` as `VALUES`
+    * Then, we add an **array** after the query 
+    * It will countain the expressions or var that will **replace the placeholders** (in order)
 
 ## Author
 
