@@ -247,6 +247,8 @@ But when we do this in our Node back-end, we're going to be using db.query()
     * Then, we add an **array** after the query 
     * It will countain the expressions or var that will **replace the placeholders** (in order)
 
+    
+
 ## Author
 
 Christian Villalba
