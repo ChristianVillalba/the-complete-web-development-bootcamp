@@ -74,12 +74,12 @@ Open Source Relational Database Management System (RDBMS).
     * ▶ (Execute/Refresh)
         * "CREATE TABLE Query returned successfully in 74 msec."
         * Check: *Database Name* > Schemas > public > Tables (1) > **capitals**
-        * Check: capitals (right click) > > View/ Edit Data > All rows (HEADER created, emtpy rows)
+        * Check: capitals (right click) > View/ Edit Data > All rows (HEADER created, emtpy rows)
         * Query (done by pgAdmin): 
             ```sql
             SELECT * FROM public.capitals
             ORDER BY id ASC                      
-                ```
+            ```
 * **Importing** data to our table:
     * Importing ***capitals.csv*** into the table ***capitals*** we just created using pgAdmin
         * Location Reminder: *Database Name* > Schemas > public > Tables (1) > **capitals**
@@ -95,7 +95,7 @@ Open Source Relational Database Management System (RDBMS).
             * ⚠️ The names of the fields in the table we created, must exact match the header of what are going to import.
             * Eg: Imported data has no id
                 * If our table has more columns that the data we are going to import:
-                    * Delete/PressCross we're relying on Postgres to autogenerate it
+                    * Delete/Press-Cross
                     * We rely on Postgres to autogenerate it
     * In case we need to reedit fields in the table we created:
         * Tables> **capitals** > Right click > properties > Columns > *edit* > Save
