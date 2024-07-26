@@ -21,19 +21,22 @@ db.connect()
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-
-app.get("/", async (req, res) => {     // access Homepage (/)
-  // query for the places we visited. It's a query
-  const result = await db.query("SELECT country_code FROM visited_countries");     // the result of the query is an array with JS Objects. we will use a forEach loop to access them
-  
+// split out the function that checks for all of the countries in our visited_countries
+async function checkVisisted() {
+  const result = await db.query("SELECT country_code FROM visited_countries");
   let countries = [];
-  result.rows.forEach((country) => {     // access every value returned for the query and push it to the empty array: countries
+  result.rows.forEach((country) => {
     countries.push(country.country_code);
   });
-  console.log(result.rows); // not neccessary but useful to check how the strucure of the data looks like
+  return countries;
+}
+
+// homepage
+app.get("/", async (req, res) => {
+  const countries = await checkVisisted();
   res.render("index.ejs", { countries: countries, total: countries.length });
-  db.end();   // close the connecton to the database
 });
+
 
 app.post("/add", async (req, res) => {  // new route > index.ejs > form - /add
   const input = req.body["country"];   // index.ejs > input: name = "country".  We use the input to make a query to our DB. and store it inside result 
@@ -58,24 +61,10 @@ app.listen(port, () => {
 });
 
 // STARTS HERE
-// db.connect();
 
-// app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(express.static("public"));
 
-// async function checkVisisted() {
-//   const result = await db.query("SELECT country_code FROM visited_countries");
-//   let countries = [];
-//   result.rows.forEach((country) => {
-//     countries.push(country.country_code);
-//   });
-//   return countries;
-// }
+
 // // GET home page
-// app.get("/", async (req, res) => {
-//   const countries = await checkVisisted();
-//   res.render("index.ejs", { countries: countries, total: countries.length });
-// });
 
 // //INSERT new country
 // app.post("/add", async (req, res) => {
