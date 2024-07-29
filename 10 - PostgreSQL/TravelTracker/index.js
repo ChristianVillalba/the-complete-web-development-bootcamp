@@ -37,24 +37,44 @@ app.get("/", async (req, res) => {
   res.render("index.ejs", { countries: countries, total: countries.length });
 });
 
+//INSERT new country
+// app.post("/add", async (req, res) => {
+//   const input = req.body["country"];
 
-app.post("/add", async (req, res) => {  // new route > index.ejs > form - /add
-  const input = req.body["country"];   // index.ejs > input: name = "country".  We use the input to make a query to our DB. and store it inside result 
-  const result = await db.query(    
-    "SELECT country_code FROM countries WHERE country_name = $1",
-    [input]   // changes the placeholder $1 for the user's input
-  );
-  // result.rows contains what are we looking for  if the result.rows is actually empty, it means we got a no match from this query.
-  if (result.rows.length !== 0) {      // if we have a match !==0 , then we continue and grab the data
-    const data = result.rows[0];      // we place the data at the first position of the row ...
-    const countryCode = data.country_code;     // we get the country_code that is inside that piece of data
-    // we have to country_code that matches users' input, we make another query:
-    await db.query("INSERT INTO visited_countries (country_code) VALUES ($1)", // this query allow us to us INSERT
-      [countryCode]
+  try {
+    const result = await db.query(
+      "SELECT country_code FROM countries WHERE LOWER(country_name) LIKE '%' || $1 || '%';",
+      [input.toLowerCase()]
     );
-    res.redirect("/");  // redirects to HOMEPAGE
+
+    const data = result.rows[0];
+    const countryCode = data.country_code;
+    try {
+      await db.query(
+        "INSERT INTO visited_countries (country_code) VALUES ($1)",
+        [countryCode]
+      );
+      res.redirect("/");
+    } catch (err) {
+      console.log(err);
+      const countries = await checkVisisted();
+      res.render("index.ejs", {
+        countries: countries,
+        total: countries.length,
+        error: "Country has already been added, try again.",
+      });
+    }
+  } catch (err) {
+    console.log(err);
+    const countries = await checkVisisted();
+    res.render("index.ejs", {
+      countries: countries,
+      total: countries.length,
+      error: "Country name does not exist, try again.",
+    });
   }
 });
+
 
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
@@ -66,7 +86,7 @@ app.listen(port, () => {
 
 // // GET home page
 
-// //INSERT new country
+//INSERT new country
 // app.post("/add", async (req, res) => {
 //   const input = req.body["country"];
 
