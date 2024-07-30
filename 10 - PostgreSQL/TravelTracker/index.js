@@ -38,33 +38,37 @@ app.get("/", async (req, res) => {
 });
 
 //INSERT new country
-// app.post("/add", async (req, res) => {
-//   const input = req.body["country"];
+app.post("/add", async (req, res) => {
+  const input = req.body["country"];
 
-  try {
+  try { // try-catch block: Look for a country_name that matches what the user put into the input...
     const result = await db.query(
+      // using WHERE LIKE in order to create column-value pattern matches '%' || $1 || '%';
       "SELECT country_code FROM countries WHERE LOWER(country_name) LIKE '%' || $1 || '%';",
-      [input.toLowerCase()]
+      [input.toLowerCase()] // this + LOWER(country_name) produce matches when casing is wrong
     );
-
     const data = result.rows[0];
     const countryCode = data.country_code;
-    try {
+
+    try { //second try-catch block: country_code has to be unique, so if this already exists:
       await db.query(
         "INSERT INTO visited_countries (country_code) VALUES ($1)",
         [countryCode]
       );
       res.redirect("/");
+
     } catch (err) {
       console.log(err);
       const countries = await checkVisisted();
       res.render("index.ejs", {
         countries: countries,
         total: countries.length,
-        error: "Country has already been added, try again.",
+        error: "Country has already been added, try again.", //if the country already exists, pass this error
       });
     }
-  } catch (err) {
+
+  } catch (err) { // if "try" fails, catch block, and log that error, but grab all the countries that are already visited.
+    // Passing over the countries and countries.length & an error message:
     console.log(err);
     const countries = await checkVisisted();
     res.render("index.ejs", {
@@ -80,50 +84,3 @@ app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
 
-// STARTS HERE
-
-
-
-// // GET home page
-
-//INSERT new country
-// app.post("/add", async (req, res) => {
-//   const input = req.body["country"];
-
-//   try {
-//     const result = await db.query(
-//       "SELECT country_code FROM countries WHERE LOWER(country_name) LIKE '%' || $1 || '%';",
-//       [input.toLowerCase()]
-//     );
-
-//     const data = result.rows[0];
-//     const countryCode = data.country_code;
-//     try {
-//       await db.query(
-//         "INSERT INTO visited_countries (country_code) VALUES ($1)",
-//         [countryCode]
-//       );
-//       res.redirect("/");
-//     } catch (err) {
-//       console.log(err);
-//       const countries = await checkVisisted();
-//       res.render("index.ejs", {
-//         countries: countries,
-//         total: countries.length,
-//         error: "Country has already been added, try again.",
-//       });
-//     }
-//   } catch (err) {
-//     console.log(err);
-//     const countries = await checkVisisted();
-//     res.render("index.ejs", {
-//       countries: countries,
-//       total: countries.length,
-//       error: "Country name does not exist, try again.",
-//     });
-//   }
-// });
-
-// app.listen(port, () => {
-//   console.log(`Server running on http://localhost:${port}`);
-// });
