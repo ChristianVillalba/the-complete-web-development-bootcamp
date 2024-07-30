@@ -47,7 +47,7 @@ Open Source Relational Database Management System (RDBMS).
 
 ### Requirements to use Postgree
 * Postgres Server
-    * To use Postgrees in our local computer
+    * To use postgres in our local computer
     * Not necessary for remote server
 * pgAdmin
     * UI to tap into our Postgres Server (instead of command line)
@@ -60,7 +60,7 @@ Open Source Relational Database Management System (RDBMS).
 * **Creating** a Table: pgAdmin (v4)
     * Open pgAdmin (may require a password - the one we created when installed pgAdmin)
     * Servers > Databases (right click) > create > Database...
-    * Database (MyName) + Owner (postgrees - default) + Comment (optional)
+    * Database (MyName) + Owner (postgres - default) + Comment (optional)
         * Check: *Database Name* > Schemas > public > **Tables (empty)**
     * Selecting our created Database > ▤ query tool 
     * Query:
@@ -83,7 +83,7 @@ Open Source Relational Database Management System (RDBMS).
 * **Importing** data to our table:
     * Importing ***capitals.csv*** into the table ***capitals*** we just created using pgAdmin
         * Location Reminder: *Database Name* > Schemas > public > Tables (1) > **capitals**
-    * Right click on table: **capitals** > Import/Export Data >> Import/Export Window:
+        * Right click on table: **capitals** > Import/Export Data >> Import/Export Window:
         * General Tab: 
             * ( ✓ Import)  
             * Select Filename (Open)
@@ -99,7 +99,7 @@ Open Source Relational Database Management System (RDBMS).
                     * We rely on Postgres to autogenerate it
     * In case we need to reedit fields in the table we created:
         * Tables> **capitals** > Right click > properties > Columns > *edit* > Save
-        * Ready to be imported agian.
+        * Ready to be imported again.
         
 ### READ data from a Postgres database
 
@@ -115,11 +115,11 @@ import pg from "pg";
 
 -- Define a new client and configure it
 const db= new pg.Client({
-    user: "postgrees",
+    user: "postgres",
     host: "localhost",
     database: "world",
     password: "y0uRp@$Sw0r1D",
-    port: 5432,   // Default postgrees port
+    port: 5432,   // Default postgres port
 });
 
 -- Starts the connection defined above
@@ -162,14 +162,14 @@ db.query("Select * FROM nameOfTable", (err,res) => {
 * `NOT NULL` 
     * Missing or empty values are not allowed
     * Attemps to add NULL will produce an ERROR
-* `NOT NULL`
+* `UNIQUE`
     * Value con not be repeated in the table.
-    * No other value stgored can be the same (avoid duplicates).       
+    * No other value stored can be the same (avoid duplicates).       
        
 ```sql
 CREATE TABLE visited_countries(
 	id SERIAL PRIMARY KEY,
-	country_code CHAR(2) NOT NULL UNIQUE,  
+	country_code CHAR(2) NOT NULL UNIQUE  
 );
 ```
 
