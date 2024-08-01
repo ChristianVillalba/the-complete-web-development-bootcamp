@@ -221,9 +221,7 @@ VALUES ('Italy', 1.34, 5.3)
 ```
 When we write SQL queries and we use the INSERT INTO command, this is how we insert values.     
 And the reason is because our values are hard coded, we already know what the values should be.     
-        
-                
-
+                        
 Javascript      
 ```javascript
 db.query(INSERT INTO tableName (column1, column2, column3)
@@ -246,8 +244,6 @@ But when we do this in our Node back-end, we're going to be using db.query()
     * we add placehoders `$1, $2, $3` as `VALUES`
     * Then, we add an **array** after the query 
     * It will countain the expressions or var that will **replace the placeholders** (in order)
-
-    
 
 ## Author
 
