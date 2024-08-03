@@ -252,7 +252,11 @@ But when we do this in our Node back-end, we're going to be using db.query()
 
 * Relationships are a big aspect of SQL databases
 
-### Relationships Types 
+### One to One
+
+### One to Many
+
+### Many to Many relationships
 
 
 ## Author
