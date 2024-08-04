@@ -245,18 +245,80 @@ But when we do this in our Node back-end, we're going to be using db.query()
     * Then, we add an **array** after the query 
     * It will countain the expressions or var that will **replace the placeholders** (in order)
 
-### Relationships Types   
-* One to One
-* One to Many
-* Many to Many relationships
-
-* Relationships are a big aspect of SQL databases
+### Relationships Types  
+* Relationships are a big aspect of SQL databases 
+    * One to One
+    * One to Many
+    * Many to Many relationships
 
 ### One to One
+* Databases are optimized to have many records (rows),    
+    but they can struggle when you have too many fields (columns).
+* One way of **splitting a table**: a One to One relationship.
+```sql
+CREATE TABLE friends (
+    id SERIAL PRIMARY KEY, /* all the id's are unique */ 
+    fName TEXT (64),  /* (x) limits the num of char */ 
+    lName TEXT (64)   /* No , after the final column  */ 
+);    
+```
+```sql
+CREATE TABLE contact_detail (
+    id INTEGER REFERENCES sutdent(id) UNIQUE, 
+    phone TEXT (64),  
+    address TEXT (64)
+);    
+```
+* The **REFERENCES** keyword in Postgres which sets a field as a FOREIGN KEY.
+* **INNER JOIN:** Joining tables using SQL:
+```sql
+SELECT *
+FROM student
+JOIN contac_detail
+ON friend.id = contact_detail.id
+    -- pk           fk--
+-- The resultwill be a table that countains all the fields in both tables 
+--(friends+contact_details)
+```
 
 ### One to Many
-
+* It occurs very frequently in data storage
+* One parent can have multiple childs    
+    The childs can only have one parent
+    * One user can have multiple post.    
+    All the post can be associated only to a single user.
+* Each child has a primary key
+    * The foreing key will be field that links back to the parent 
+* Many to one would be the same relationship using the childs as reference
+```sql
+CREATE TABLE student (
+    id SERIAL PRIMARY KEY, /* all the id's are unique */ 
+    fName TEXT (64),  /* (x) limits the num of char */ 
+    lName TEXT (64)   /* No , after the final column  */ 
+);    
+```
+```sql
+CREATE TABLE homework (
+    id SERIAL PRIMARY KEY, --pk
+    student_id INTEGER REFERENCES student(id) --fk target table(field)
+    mark INTEGER,  
+);    
+```
+* ***Note:*** to join tables, student_id needs to match student(id)
+```sql
+SELECT * --student.id, fName, lName, mark //don't repeat data ids:pk,fk
+FROM student
+JOIN homework
+ON student.id = student_id
+    -- pk           fk--
+-- The resultwill be a table that countains all the fields in both tables 
+--(friends+contact_details)
+```
 ### Many to Many relationships
+* One of the most complex and least used types of relationships.
+* Multiple records in one table are associated with multiple records in another table. 
+    * Eg: Students and courses    
+    Each student can take multiple courses, and each course can have multiple students.
 
 
 ## Author
