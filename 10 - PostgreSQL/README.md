@@ -319,7 +319,29 @@ ON student.id = student_id
 * Multiple records in one table are associated with multiple records in another table. 
     * Eg: Students and courses    
     Each student can take multiple courses, and each course can have multiple students.
-
+And this type of relationship does happen occasionally in our data storage needs.
+* Postgres: usually , we create a table that represents just that relationship.
+    * We can't represent the relationship alone using a single relationship
+```sql
+CREATE TABLE student (
+    id SERIAL PRIMARY KEY,
+    fName TEXT (64), 
+    lName TEXT (64)   
+);    
+```
+```sql
+CREATE TABLE class (
+    id SERIAL PRIMARY KEY,  
+    title TEXT (64),  
+);    
+```
+```sql
+CREATE TABLE enrollement (
+    student_id INTEGER REFERENCES student(id),
+    class_id INTEGER REFERENCES class(id),
+    SERIAL PRIMARY KEY(student_id , class_id) 
+);    
+```
 
 ## Author
 
