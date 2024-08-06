@@ -342,6 +342,44 @@ CREATE TABLE enrollement (
     SERIAL PRIMARY KEY(student_id , class_id) 
 );    
 ```
+* Now we can use JOIN keyword:
+```sql
+SELECT * 
+FROM enrollment
+JOIN student ON student.id = enrollment.student_id
+JOIN class ON class.id = enrollment.class_id
+-- table.field = relationshipTable.table_id
+--  pk = fk // they match in order to get the same student/class
+```
+
+### ALIASES
+* Alias command: establish an alias -alternative name- using the AS keyword.
+* Queries using Aliases
+    * This is helpful when you want to search through tables that has many different fields called "id" 
+```sql
+SELECT student.id AS stud, first_name, last_name, title 
+-- when it generates the final table, it's going to rename student.id field into stud.
+```
+* Shorten & simplyfy queries:  
+    * We can set aliases for our tables
+```sql
+SELECT s.id AS stud, first_name, last_name, title 
+FROM enrollment AS e
+JOIN student AS s On s.id = e.student_id
+JOIN class AS c ON c.id = e.class_id
+-- 
+```
+* Omitting the AS keyword:
+    * AS keyword is actually completely optional.
+    * ***Recommendation:*** Keep using AS
+```sql
+SELECT s.id stud, first_name, last_name, title 
+FROM enrollment e
+JOIN student s On s.id = e.student_id
+JOIN class c ON c.id = e.class_id
+-- 
+```
+
 
 ## Author
 
