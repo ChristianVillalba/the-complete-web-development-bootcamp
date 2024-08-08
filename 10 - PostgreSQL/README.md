@@ -245,6 +245,21 @@ But when we do this in our Node back-end, we're going to be using db.query()
     * Then, we add an **array** after the query 
     * It will countain the expressions or var that will **replace the placeholders** (in order)
 
+### UPDATE & DELETE
+
+* ALTER: to change the schema of your table.
+```sql
+ALTER TABLE student
+    RENAME TO user;
+ALTER TABLE user
+    ALTER COLUMN first_name TYPE VARCHAR(64); -- Change data type
+ALTER TABLE contact_detail
+    ADD email TEXT;  -- Adds a new column  
+```
+
+
+
+
 ### Relationships Types  
 * Relationships are a big aspect of SQL databases 
     * One to One

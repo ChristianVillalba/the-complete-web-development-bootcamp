@@ -112,7 +112,7 @@ INSERT INTO users (name, color)
 VALUES ('Christian', 'green'), ('Jinny', 'red');
 
 INSERT INTO visited_countries (country_code, user_id)
-VALUES ('SP', 1), ('GB', 1), ('CA', 2), ('GB', 2 );
+VALUES ('ES', 1), ('GB', 1), ('CA', 2), ('GB', 2 );
 
 SELECT *
 FROM visited_countries
