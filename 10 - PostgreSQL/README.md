@@ -248,6 +248,8 @@ But when we do this in our Node back-end, we're going to be using db.query()
 ### UPDATE & DELETE
 
 * ALTER: to change the schema of your table.
+    * eg: Adds a particular constraint
+    * eg: Change (add/deelte) a column
 ```sql
 ALTER TABLE student
     RENAME TO user;
@@ -255,9 +257,36 @@ ALTER TABLE user
     ALTER COLUMN first_name TYPE VARCHAR(64); -- Change data type
 ALTER TABLE contact_detail
     ADD email TEXT;  -- Adds a new column  
+ALTER TABLE visited_countries
+    ADD UNIQUE (user_id, country_code);  -- Adds a constrain
 ```
-
-
+* UPDATE: update a particular piece of data: 
+```sql
+UPDATE myTable
+SET this_column = newValue -- name = "Willy"
+WHERE condition -- eg: id=3
+```
+* ORDER BY: retrieve data from our database ordered by some sort of condition.
+```sql
+SELECT *
+FROM myTable
+ORDER BY condition -- eg: ID ASC / ID DESC
+```
+* ORDER BY: retrieve data from our database ordered by some sort of condition.
+```sql
+SELECT *
+FROM myTable
+ORDER BY condition -- eg: ID ASC / ID DESC
+```
+* DELETE: deletes data
+```sql
+DELETE FROM myTable
+WHERE condition -- eg= if=5 / user_id=3 AND country_code='FR'
+```
+* DROP: deletes an entire table
+```sql
+DROP TABLE IF EXISTS visitied_countries, user;
+```
 
 
 ### Relationships Types  
