@@ -411,7 +411,6 @@ SELECT s.id AS stud, first_name, last_name, title
 FROM enrollment AS e
 JOIN student AS s On s.id = e.student_id
 JOIN class AS c ON c.id = e.class_id
--- 
 ```
 * Omitting the AS keyword:
     * AS keyword is actually completely optional.
@@ -421,7 +420,6 @@ SELECT s.id stud, first_name, last_name, title
 FROM enrollment e
 JOIN student s On s.id = e.student_id
 JOIN class c ON c.id = e.class_id
--- 
 ```
 
 
