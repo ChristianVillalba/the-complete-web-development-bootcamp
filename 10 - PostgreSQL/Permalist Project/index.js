@@ -3,16 +3,15 @@ import bodyParser from "body-parser";
 import pkg from 'pg';
 const { Pool } = pkg;
 
-
 const app = express();
 const port = 3000;
 
 // Set up the PostgreSQL connection pool
 const pool = new Pool({
-  user: "postgrees",
+  user: "postgres",
   host: "localhost",
   database: "permalist",
-  password: "2123",
+  password: "28400Pos$$",
   port: 5432,
 });
 
@@ -59,7 +58,7 @@ app.post("/edit", async (req, res) => {
   const id = req.body.updatedItemId;
 
   try {
-    await pool.query("UPDATE items SET title = $1 WHERE id = $2", [item, id]);
+    await pool.query("UPDATE items SET title = ($1) WHERE id = $2", [item, id]);
     res.redirect("/");
   } catch (err) {
     console.error(err);
