@@ -1,9 +1,8 @@
-## AJAX Fundamentals for Intermediate Web Developers
+## AJAX Fundamentals
 
-* **1 - AJAX**
-    * Definition:     
-        * AJAX (Asynchronous JavaScript and XML) is a technique that allows web pages to update asynchronously by exchanging small amounts of data with the server behind the scenes.
-        * Enables web applications to send and receive data without reloading the entire page.
+* **1 - AJAX**  
+    * AJAX (Asynchronous JavaScript and XML) is a technique that allows web pages to update asynchronously by exchanging small amounts of data with the server behind the scenes.
+    * Enables web applications to send and receive data without reloading the entire page.
     * Core Technologies:
         * JavaScript: For creating AJAX requests.
         * XMLHttpRequest (XHR): The object used to interact with servers.
@@ -15,11 +14,10 @@
         * Define a callback function to handle the server's response.
         * Open a connection to the server.
         * Send the request to the server.
-    * Basic Syntax Example:
+    * **Basic Syntax.** Example:
     ```javascript
     // 1. Create an XMLHttpRequest object
     var xhr = new XMLHttpRequest();
-
     // 2. Define a callback function
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
@@ -47,20 +45,20 @@
     ```
 
 * **4 - Common AJAX Methods: GET VS POST**
-    * GET:
+    * **GET:**
         * Used for requesting data from a server.
         * Data is appended to the URL.
         * Limited data size.
-    * POST:
+    * **POST:**
         * Used for sending data to the server (e.g., form submissions).
         * Data is sent in the request body.
         * Can handle larger amounts of data.
-    * Example: GET Request
+    *  GET Request. Example:
     ```javascript
     xhr.open("GET", "server-script.php?name=John", true);
     xhr.send();
     ```
-    * Example: POST Request
+    * POST Request. Example:
     ```javascript
     xhr.open("POST", "server-script.php", true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
